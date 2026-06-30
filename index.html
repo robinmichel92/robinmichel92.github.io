@@ -7,6 +7,7 @@
 <meta content="Aireo is a multi-mic automix for podcasts: it auto-levels your mics, removes mic bleed and cleans each voice from separate files. 100% local, Mac &amp; Windows. From €79." name="description"/>
 <meta content="#0e1216" name="theme-color"/>
 <meta content="Aireo" name="author"/>
+<meta content="DlOmS69r4xLolPxkrC07GYERRSe2k6BsgKyvx5sYhzk" name="google-site-verification"/>
 <link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
 <link href="/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
 <link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
@@ -33,7 +34,7 @@
 <meta content="https://aireo.studio/assets/og-cover.png" name="twitter:image"/>
 <!-- Polices self-hébergées (RGPD : aucune connexion à Google Fonts) -->
 <link href="/assets/fonts.css?v=1" rel="stylesheet"/>
-<link href="/styles.css?v=35" rel="stylesheet"/>
+<link href="/styles.css?v=36" rel="stylesheet"/>
 <!-- pré-masquage anti-flash de l'entrée hero (retiré si Motion ne prend pas la main) -->
 <script>(function(){if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;document.documentElement.classList.add('js-anim');setTimeout(function(){document.documentElement.classList.remove('js-anim');},1500);})();</script>
 </head>
@@ -384,9 +385,10 @@
 </section>
 <!-- ============ QUI FAIT AIREO (E-E-A-T) ============ -->
 <section class="maker reveal" id="maker">
-<p class="tc-eyebrow maker-eyebrow"><span>Why Aireo</span></p>
+<p class="tc-eyebrow maker-eyebrow"><span>The maker</span></p>
 <h2 class="maker-title">Pro sound, to launch your show.</h2>
-<p class="maker-body maker-body--soft">Our goal is simple: give podcasters and editors a studio-grade sound, so they can break into the pro world more easily, without costly gear or years of mixing behind them.</p>
+<p class="maker-body">Behind Aireo there's <strong>Robin Michel</strong>, a sound engineer. Twenty years mixing voices for television, broadcast and podcasts taught me one thing: what used to take me hours by hand, a well-tuned machine can do in minutes, without giving up any quality. Aireo is that craft, put into a tool.</p>
+<p class="maker-body maker-body--soft">My goal is simple: give podcasters and editors a studio-grade sound, so they can break into the pro world more easily, without costly gear or years of mixing behind them.</p>
 </section>
 <!-- ============ TARIFS ============ -->
 <section class="pricing reveal" id="tarifs">
@@ -479,7 +481,11 @@
 </ul>
 </article>
 </div>
-<p aria-live="polite" class="pricing-foot tc" id="checkoutNote" role="status">For macOS &amp; Windows · Lifetime license · No subscription · Secure payment via Lemon Squeezy · VAT included</p>
+<div class="plat-avail tc">
+<span class="plat-chip plat-chip--ok">macOS (Apple Silicon &amp; Intel) — Available now</span>
+<span class="plat-chip plat-chip--soon">Windows 10/11 — Coming soon</span>
+</div>
+<p aria-live="polite" class="pricing-foot tc" id="checkoutNote" role="status">Lifetime license · No subscription · Secure payment via Lemon Squeezy · VAT included</p>
 </section>
 <!-- ============ FAQ (AEO) ============ -->
 <section class="faq reveal" id="faq">
@@ -589,7 +595,24 @@
       "url": "https://aireo.studio/",
       "logo": "https://aireo.studio/assets/og-cover.png",
       "description": "Aireo cleans voices for podcast and broadcast. Everything runs locally.",
-      "sameAs": []
+      "sameAs": [],
+      "founder": {
+        "@id": "https://aireo.studio/#founder"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://aireo.studio/#founder",
+      "name": "Robin Michel",
+      "jobTitle": "Sound engineer and mixer",
+      "url": "https://tirobi25.wixsite.com/website-2",
+      "sameAs": [
+        "https://www.linkedin.com/in/robin-michel-345b7a206",
+        "https://tirobi25.wixsite.com/website-2"
+      ],
+      "worksFor": {
+        "@id": "https://aireo.studio/#org"
+      }
     },
     {
       "@type": "WebSite",

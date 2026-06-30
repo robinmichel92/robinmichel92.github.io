@@ -7,6 +7,7 @@
 <meta content="Aireo, l'automix multi-micros pour podcast : cale vos micros, retire la repisse (mic bleed) et nettoie chaque voix. 100 % local, pour Mac et Windows. Dès 79 €." name="description"/>
 <meta content="#0e1216" name="theme-color"/>
 <meta content="Aireo" name="author"/>
+<meta content="DlOmS69r4xLolPxkrC07GYERRSe2k6BsgKyvx5sYhzk" name="google-site-verification"/>
 <link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
 <link href="/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
 <link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
@@ -33,7 +34,7 @@
 <meta content="https://aireo.studio/assets/og-cover.png" name="twitter:image"/>
 <!-- Polices self-hébergées (RGPD : aucune connexion à Google Fonts) -->
 <link href="/assets/fonts.css?v=1" rel="stylesheet"/>
-<link href="/styles.css?v=35" rel="stylesheet"/>
+<link href="/styles.css?v=36" rel="stylesheet"/>
 <!-- pré-masquage anti-flash de l'entrée hero (retiré si Motion ne prend pas la main) -->
 <script>(function(){if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;document.documentElement.classList.add('js-anim');setTimeout(function(){document.documentElement.classList.remove('js-anim');},1500);})();</script>
 </head>
@@ -384,9 +385,10 @@
 </section>
 <!-- ============ QUI FAIT AIREO (E-E-A-T) ============ -->
 <section class="maker reveal" id="maker">
-<p class="tc-eyebrow maker-eyebrow"><span>Pourquoi Aireo</span></p>
+<p class="tc-eyebrow maker-eyebrow"><span>Le créateur</span></p>
 <h2 class="maker-title">Un son de pro, pour vous lancer.</h2>
-<p class="maker-body maker-body--soft">Notre but est simple : donner aux podcasteurs et aux monteurs le niveau d'un studio, pour se lancer plus facilement dans le milieu pro, sans matériel hors de prix, ni des années de mixage derrière soi.</p>
+<p class="maker-body">Derrière Aireo, il y a <strong>Robin Michel</strong>, ingénieur du son. Vingt ans à mixer des voix pour la télévision, le broadcast et le podcast m'ont appris une chose : ce qui me prenait des heures à la main, une machine bien réglée peut le faire en quelques minutes, sans rien lâcher sur la qualité. Aireo, c'est ce savoir-faire mis dans un outil.</p>
+<p class="maker-body maker-body--soft">Mon but est simple : donner aux podcasteurs et aux monteurs le niveau d'un studio, pour se lancer plus facilement dans le milieu pro, sans matériel hors de prix, ni des années de mixage derrière soi.</p>
 </section>
 <!-- ============ TARIFS ============ -->
 <section class="pricing reveal" id="tarifs">
@@ -479,7 +481,11 @@
 </ul>
 </article>
 </div>
-<p aria-live="polite" class="pricing-foot tc" id="checkoutNote" role="status">Pour macOS et Windows · Licence perpétuelle · Sans abonnement · Paiement sécurisé via Lemon Squeezy · TVA incluse</p>
+<div class="plat-avail tc">
+<span class="plat-chip plat-chip--ok">macOS (puce Apple &amp; Intel) — Disponible</span>
+<span class="plat-chip plat-chip--soon">Windows 10/11 — Bientôt</span>
+</div>
+<p aria-live="polite" class="pricing-foot tc" id="checkoutNote" role="status">Licence perpétuelle · Sans abonnement · Paiement sécurisé via Lemon Squeezy · TVA incluse</p>
 </section>
 <!-- ============ FAQ (AEO) ============ -->
 <section class="faq reveal" id="faq">
@@ -589,7 +595,24 @@
       "url": "https://aireo.studio/",
       "logo": "https://aireo.studio/assets/og-cover.png",
       "description": "Aireo nettoie la voix pour le podcast et le broadcast. Tout tourne en local.",
-      "sameAs": []
+      "sameAs": [],
+      "founder": {
+        "@id": "https://aireo.studio/#founder"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://aireo.studio/#founder",
+      "name": "Robin Michel",
+      "jobTitle": "Ingénieur du son et mixeur",
+      "url": "https://tirobi25.wixsite.com/website-2",
+      "sameAs": [
+        "https://www.linkedin.com/in/robin-michel-345b7a206",
+        "https://tirobi25.wixsite.com/website-2"
+      ],
+      "worksFor": {
+        "@id": "https://aireo.studio/#org"
+      }
     },
     {
       "@type": "WebSite",

@@ -657,8 +657,17 @@ section{padding-left:var(--pad);padding-right:var(--pad)}
 .tier-feats li.feat-head::before{display:none}
 .tier--enterprise .tier-feats li::before{border-color:var(--ink-mute)}
 
+/* Platform availability chips (below tiers grid) */
+.plat-avail{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:32px}
+.plat-chip{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;padding:7px 15px;border-radius:99px;border:1px solid transparent}
+.plat-chip::before{content:"";width:7px;height:7px;border-radius:50%;flex:none}
+.plat-chip--ok{color:var(--green);border-color:color-mix(in srgb,var(--green) 35%,transparent);background:color-mix(in srgb,var(--green) 8%,transparent)}
+.plat-chip--ok::before{background:var(--green)}
+.plat-chip--soon{color:var(--ink-mute);border-color:var(--line-2);background:var(--panel)}
+.plat-chip--soon::before{background:#d4983a}
+
 .pricing-foot{
-  margin:34px auto 0;text-align:center;font-size:12.5px;color:var(--ink-mute);
+  margin:18px auto 0;text-align:center;font-size:12.5px;color:var(--ink-mute);
   letter-spacing:.02em;max-width:70ch;transition:color .2s;
 }
 .pricing-foot.is-soon{color:var(--green)}
