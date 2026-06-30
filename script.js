@@ -566,8 +566,8 @@
        (Le palier Entreprise/École reste un lien mailto dans le HTML.)
      ============================================================ */
   var LS_CHECKOUT = {
-    light: "",   // ← URL Lemon Squeezy du palier Light
-    pro:   ""    // ← URL Lemon Squeezy du palier Pro
+    light: "https://aireo.lemonsqueezy.com/checkout/buy/1b0b9064-306e-4b2e-b277-73846995c545",   // Aireo Light (79 €)
+    pro:   "https://aireo.lemonsqueezy.com/checkout/buy/93f045fa-f259-468a-8064-49966a30a91c"    // Aireo Pro (189 €)
   };
 
   var SOON = {
