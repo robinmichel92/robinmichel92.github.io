@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&family=Geist+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;box-sizing:border-box}
+  html,body{width:1200px;height:630px;overflow:hidden}
+  body{
+    font-family:"Hanken Grotesk",sans-serif;
+    background:
+      radial-gradient(60% 70% at 18% 12%, rgba(124,108,240,.30) 0%, transparent 60%),
+      radial-gradient(60% 70% at 88% 96%, rgba(52,211,166,.22) 0%, transparent 60%),
+      radial-gradient(120% 120% at 50% 40%, #131a23 0%, #0e1216 64%);
+    color:#e6eaec;
+    padding:72px 80px;
+    display:flex;flex-direction:column;justify-content:space-between;
+    position:relative;
+  }
+  .kick{font-family:"Geist Mono",monospace;font-size:21px;letter-spacing:.06em;color:#8a96a1}
+  .kick b{color:#34d3a6;font-weight:500}
+  .word{font-weight:800;font-size:150px;letter-spacing:-.01em;line-height:1;display:flex;align-items:baseline}
+  .ai{background:linear-gradient(95deg,#34d3a6,#7c6cf0);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .ink{color:#f2f5f7}
+  .dot{color:#f2f5f7;margin-left:.012em}
+  .tag{font-size:46px;font-weight:700;letter-spacing:-.02em;line-height:1.08;max-width:18ch;
+       background:linear-gradient(180deg,#fff 40%,#c6cdd4);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .foot{display:flex;align-items:center;gap:26px;font-family:"Geist Mono",monospace;font-size:19px;color:#aab4bd}
+  .foot .dotg{width:9px;height:9px;border-radius:50%;background:#34d3a6;box-shadow:0 0 12px #34d3a6;display:inline-block;margin-right:9px}
+  .foot span{display:inline-flex;align-items:center}
+  /* mini waveform */
+  .wave{position:absolute;right:80px;top:96px;display:flex;align-items:center;gap:6px;height:120px}
+  .wave i{width:6px;border-radius:3px;background:linear-gradient(180deg,#7c6cf0,#34d3a6);opacity:.9}
+</style>
+</head>
+<body>
+  <div class="wave" id="wave"></div>
+  <div class="kick"><b>00:00</b> · Voice cleanup &amp; multi-mic autolevel · for podcasts</div>
+  <div>
+    <div class="word"><span class="ai">Ai</span><span class="ink">reo</span><span class="dot">.</span></div>
+    <div class="tag" style="margin-top:18px">Drop your voices. Aireo handles the rest.</div>
+  </div>
+  <div class="foot">
+    <span><i class="dotg"></i>100% local</span>
+    <span>For macOS</span>
+    <span>Built by pro mixers</span>
+  </div>
+  <script>
+    var heights=[28,52,40,72,96,64,44,80,108,72,48,30,60,90,116,84,52,34];
+    var w=document.getElementById('wave');
+    heights.forEach(function(h){var b=document.createElement('i');b.style.height=h+'px';w.appendChild(b);});
+  </script>
+</body>
+</html>

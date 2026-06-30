@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Remove mic bleed between several mics (podcast) | Aireo</title>
+<meta name="description" content="Mic bleed (crosstalk) is what each mic picks up from the other voices. Why a noise gate isn't enough on voices, and how to remove it automatically, locally, on your podcast tracks.">
+<meta name="theme-color" content="#0e1216">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://aireo.studio/remove-mic-bleed.html">
+<link rel="alternate" hreflang="en" href="https://aireo.studio/remove-mic-bleed.html">
+<link rel="alternate" hreflang="fr" href="https://aireo.studio/fr/enlever-la-repisse.html">
+<link rel="alternate" hreflang="x-default" href="https://aireo.studio/remove-mic-bleed.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Aireo">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://aireo.studio/remove-mic-bleed.html">
+<meta property="og:title" content="Remove mic bleed (crosstalk) between several mics">
+<meta property="og:description" content="Crosstalk on voices: why a noise gate isn't enough, and how to remove mic bleed automatically, locally.">
+<meta property="og:image" content="https://aireo.studio/assets/og-cover.png">
+<link rel="stylesheet" href="/assets/fonts.css?v=1">
+<link rel="stylesheet" href="/styles.css?v=32">
+<style>
+  .doc{max-width:772px;margin:0 auto;padding:132px var(--pad) 88px}
+  .doc-crumb{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--ink-mute);margin-bottom:26px}
+  .doc-crumb a{color:var(--ink-soft)}
+  .doc h1{font-family:var(--sans);font-weight:680;font-size:clamp(29px,5vw,45px);line-height:1.09;letter-spacing:-.02em;color:#fff;margin:0 0 18px}
+  .doc .lede{font-size:clamp(17px,2.4vw,20px);line-height:1.55;color:var(--ink);margin:0 0 8px}
+  .doc h2{font-size:clamp(21px,3vw,27px);font-weight:660;letter-spacing:-.01em;color:#fff;margin:50px 0 14px}
+  .doc h3{font-size:18px;font-weight:640;color:#fff;margin:26px 0 8px}
+  .doc p{font-size:16.5px;line-height:1.66;color:var(--ink-soft);margin:0 0 14px}
+  .doc ul{margin:0 0 18px;padding-left:0;list-style:none}
+  .doc ul li{position:relative;padding-left:25px;margin-bottom:9px;font-size:16.5px;line-height:1.6;color:var(--ink-soft)}
+  .doc ul li::before{content:"";position:absolute;left:3px;top:9px;width:7px;height:7px;border-radius:50%;background:var(--green)}
+  .doc strong{color:var(--ink)}
+  .doc a.inline{color:var(--green-soft);text-decoration:underline;text-underline-offset:2px}
+  .doc-steps{counter-reset:s;list-style:none;padding:0;margin:18px 0}
+  .doc-steps li{position:relative;padding:0 0 4px 44px;margin-bottom:16px;font-size:16.5px;line-height:1.6;color:var(--ink-soft)}
+  .doc-steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:-2px;width:28px;height:28px;border-radius:50%;border:1px solid var(--line-2);color:var(--green-soft);font-family:var(--mono);font-size:13px;display:flex;align-items:center;justify-content:center}
+  .doc-cta{margin:48px 0 8px;padding:28px;border:1px solid var(--line-2);border-radius:16px;background:var(--panel);text-align:center}
+  .doc-cta p{font-size:17px;color:var(--ink);margin:0 0 16px}
+  .doc-faq{margin-top:18px}
+  .doc-faq details{border-top:1px solid var(--line);padding:16px 0}
+  .doc-faq summary{font-weight:620;color:#fff;cursor:pointer;font-size:16.5px;list-style:none}
+  .doc-faq summary::-webkit-details-marker{display:none}
+  .doc-faq summary::before{content:"+ ";color:var(--green-soft);font-family:var(--mono)}
+  .doc-faq details[open] summary::before{content:"– "}
+  .doc-faq details[open] summary{margin-bottom:10px}
+  .doc-faq p{margin:0;font-size:16px;color:var(--ink-soft);line-height:1.6}
+  .doc-rel{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);font-size:14.5px;color:var(--ink-mute)}
+  .doc-rel a{color:var(--green-soft);text-decoration:underline;text-underline-offset:2px}
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<div class="aura" aria-hidden="true"><span class="ax ax1"></span><span class="ax ax2"></span><span class="ax ax3"></span><span class="ax ax4"></span><span class="ax ax5"></span><span class="ax ax6"></span><span class="ax ax7"></span><span class="ax ax8"></span></div>
+
+<header class="topbar">
+  <a class="brand" href="/" aria-label="Aireo, home">
+    <span class="word word--sm"><span class="ai">A</span><span class="ai l-i">i</span><span class="ink">r</span><span class="ink">e</span><span class="ink">o</span><span class="dot">.</span></span>
+    <span class="brand-tag" aria-hidden="true">intelligence audio</span>
+  </a>
+  <nav class="nav" aria-label="Sections">
+    <a href="/#automix">Autolevel</a>
+    <a href="/#local">100% local</a>
+    <a href="/#tarifs">Pricing</a>
+  </nav>
+  <div class="topbar-right">
+    <div class="lang" role="group" aria-label="Language">
+      <a class="lang-btn" href="/fr/enlever-la-repisse.html" hreflang="fr">FR</a>
+      <span class="lang-sep">/</span>
+      <a class="lang-btn is-active" href="/remove-mic-bleed.html" hreflang="en" aria-current="page">EN</a>
+    </div>
+    <a class="btn btn--solid btn--sm" href="/#tarifs">Try it</a>
+  </div>
+</header>
+
+<main class="doc">
+  <p class="doc-crumb"><a href="/">Aireo</a> · Guides · Remove mic bleed</p>
+
+  <h1>Remove mic bleed (crosstalk) between several mics</h1>
+
+  <p class="lede">Mic bleed — also called <strong>crosstalk</strong>, or « repisse » in French studios — is what one person's mic picks up from the <em>other</em> voices when several mics are recording at once. On voices, a simple noise gate handles it badly&nbsp;: you have to analyse the mics <em>together</em>. Here's why, and how to remove it automatically.</p>
+
+  <h2>What is mic bleed?</h2>
+  <p>As soon as two people talk in the same room, each with their own mic, every mic captures its own voice… but also, fainter and slightly delayed, everyone else's. That's mic bleed. You hear it as a "doubled" voice, a roomy feel, and a constant background&nbsp;: even when one person speaks, you hear the others' open mics.</p>
+  <p>The more mics, the bigger the problem, and the harder it is to fix once the tracks are mixed together. That's why you always work better from the <strong>separate mics</strong>, one file per person.</p>
+
+  <h2>Why a noise gate isn't enough on voices</h2>
+  <p>The classic fix is a <strong>noise gate</strong>&nbsp;: it mutes a mic while the sound stays below a threshold. On drums, that works. On voices, it's another story&nbsp;:</p>
+  <ul>
+    <li>It chops off <strong>word starts and ends</strong>, breaths, voiced phrase tails&nbsp;: the voice becomes choppy and artificial.</li>
+    <li>When two people talk at once, the threshold no longer knows what to cut&nbsp;: the bleed gets through anyway.</li>
+    <li>It can't tell the mic's <strong>real voice</strong> from the others' bleed&nbsp;: both sit above the threshold.</li>
+  </ul>
+  <p>To do it cleanly, you have to compare the mics against each other, moment by moment, and work out who is really talking — not just watch a level on a single mic.</p>
+
+  <h2>How to remove mic bleed automatically</h2>
+  <p>The reliable approach is to <strong>analyse all the mics together</strong>&nbsp;: at each moment, identify the mic carrying the most direct voice, and attenuate that same voice on the others. This preserves the real speech and removes the spill, without chopping the sound.</p>
+  <p>That's exactly what <a class="inline" href="/#automix">Aireo's multi-mic autolevel</a> does. From your separate mic files, it&nbsp;:</p>
+  <ul>
+    <li><strong>balances the levels</strong> of the mics against each other (a quiet guest and a loud host end up at the same volume)&nbsp;;</li>
+    <li><strong>removes the bleed</strong> each mic catches from the other voices&nbsp;;</li>
+    <li>cleans up reverb, background noise and room echo along the way&nbsp;;</li>
+    <li>does all of it <a class="inline" href="/#local">100% on your machine</a>, with nothing uploaded.</li>
+  </ul>
+
+  <h2>In practice, in three steps</h2>
+  <ol class="doc-steps">
+    <li>Drop your <strong>separate mic files</strong> (one per person) into Aireo — or an AAF edit from Premiere or DaVinci.</li>
+    <li>Run it. Aireo lines up the mics, removes the bleed and cleans each voice automatically.</li>
+    <li>Get a <strong>mix-ready</strong> base, or files ready to publish. The original is never touched.</li>
+  </ol>
+  <p>Tip&nbsp;: remote tools that record <strong>one track per guest</strong> (Riverside, Zencastr, SquadCast) are ideal — exactly what Aireo needs to remove the bleed well.</p>
+
+  <div class="doc-cta">
+    <p><strong>Try it on your own tracks, free.</strong><br>Hear the full before/after; you only pay to export.</p>
+    <a class="btn btn--solid" href="/#tarifs">Try Aireo</a>
+  </div>
+
+  <h2>Frequently asked questions</h2>
+  <div class="doc-faq">
+    <details open>
+      <summary>Mic bleed, crosstalk, spill — same thing?</summary>
+      <p>Yes. All of them describe what a mic captures from sources it isn't meant to record. "Bleed" and "spill" are the common studio terms; "crosstalk" the technical one.</p>
+    </details>
+    <details>
+      <summary>Can you remove bleed from an already-mixed file?</summary>
+      <p>Barely&nbsp;: once the voices are glued into one file, they can't be cleanly separated. The right move is to start from the separate mics, one file per person. That's where Aireo works from.</p>
+    </details>
+    <details>
+      <summary>Do I need to know how to mix?</summary>
+      <p>No. Aireo does the multi-mic analysis and bleed removal automatically&nbsp;: you drop your files, it's handled. No threshold to set.</p>
+    </details>
+    <details>
+      <summary>Are my files sent to a server?</summary>
+      <p>No. All processing happens on your computer&nbsp;: no upload, no account, no cloud.</p>
+    </details>
+  </div>
+
+  <p class="doc-rel">Read next&nbsp;: <a href="/clean-voices-locally.html">Clean your voices locally, no cloud, no subscription</a> · <a href="/auphonic-alternative.html">Aireo, a local Auphonic alternative</a></p>
+</main>
+
+<footer class="foot">
+  <div class="foot-brand">
+    <span class="word word--sm"><span class="ai">A</span><span class="ai l-i">i</span><span class="ink">r</span><span class="ink">e</span><span class="ink">o</span><span class="dot">.</span></span>
+    <span class="foot-tag tc">intelligence audio</span>
+  </div>
+  <p class="foot-line">Voice cleanup for podcast &amp; broadcast. Runs on your machine.</p>
+  <nav class="foot-legal" aria-label="Legal">
+    <a href="/mentions-legales.html">Legal notice</a>
+    <a href="/confidentialite.html">Privacy</a>
+  </nav>
+  <p class="foot-copy tc">© 2026 Aireo</p>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Aireo", "item": "https://aireo.studio/" },
+        { "@type": "ListItem", "position": 2, "name": "Remove mic bleed", "item": "https://aireo.studio/remove-mic-bleed.html" }
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "Remove mic bleed (crosstalk) between several mics",
+      "description": "Crosstalk on voices: why a noise gate isn't enough, and how to remove mic bleed automatically, locally.",
+      "inLanguage": "en",
+      "author": { "@type": "Organization", "name": "Aireo" },
+      "publisher": { "@type": "Organization", "name": "Aireo", "logo": { "@type": "ImageObject", "url": "https://aireo.studio/assets/og-cover.png" } },
+      "mainEntityOfPage": "https://aireo.studio/remove-mic-bleed.html"
+    },
+    {
+      "@type": "FAQPage",
+      "inLanguage": "en",
+      "mainEntity": [
+        { "@type": "Question", "name": "Mic bleed, crosstalk, spill — same thing?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. All of them describe what a mic captures from sources it isn't meant to record. Bleed and spill are the common studio terms; crosstalk the technical one." } },
+        { "@type": "Question", "name": "Can you remove bleed from an already-mixed file?", "acceptedAnswer": { "@type": "Answer", "text": "Barely: once the voices are glued into one file, they can't be cleanly separated. The right move is to start from the separate mics, one file per person." } },
+        { "@type": "Question", "name": "Do I need to know how to mix?", "acceptedAnswer": { "@type": "Answer", "text": "No. Aireo does the multi-mic analysis and bleed removal automatically: you drop your files, it's handled. No threshold to set." } },
+        { "@type": "Question", "name": "Are my files sent to a server?", "acceptedAnswer": { "@type": "Answer", "text": "No. All processing happens on your computer: no upload, no account, no cloud." } }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

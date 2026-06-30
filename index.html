@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Aireo · Voice cleanup &amp; multi-mic autolevel for podcasts</title>
+<meta content="Aireo is a multi-mic automix for podcasts: it auto-levels your mics, removes mic bleed and cleans each voice from separate files. 100% local, Mac &amp; Windows. From €79." name="description"/>
+<meta content="#0e1216" name="theme-color"/>
+<meta content="Aireo" name="author"/>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<!-- Domaine du site : https://aireo.studio (utilisé dans canonical, og:url, JSON-LD, sitemap.xml, robots.txt). -->
+<link href="https://aireo.studio/" rel="canonical"/><link href="https://aireo.studio/" hreflang="en" rel="alternate"/><link href="https://aireo.studio/fr/" hreflang="fr" rel="alternate"/><link href="https://aireo.studio/" hreflang="x-default" rel="alternate"/>
+
+
+<!-- Open Graph -->
+<meta content="website" property="og:type"/>
+<meta content="Aireo" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="https://aireo.studio/" property="og:url"/>
+<meta content="Aireo · Drop your voices. Aireo takes care of it." property="og:title"/>
+<meta content="Voice cleanup and multi-mic autolevel for podcasts. From separate files, Aireo balances your mics against each other, ready to mix. 100% local, for Mac &amp; Windows. From €79." property="og:description"/>
+<meta content="https://aireo.studio/assets/og-cover.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Aireo · voice cleanup for podcast &amp; broadcast, 100% local" property="og:image:alt"/>
+<!-- Twitter / X -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Aireo · Drop your voices. Aireo takes care of it." name="twitter:title"/>
+<meta content="Voice cleanup and multi-mic autolevel for podcasts. From separate files, Aireo balances your mics against each other, ready to mix. 100% local, for Mac &amp; Windows. From €79." name="twitter:description"/>
+<meta content="https://aireo.studio/assets/og-cover.png" name="twitter:image"/>
+<!-- Polices self-hébergées (RGPD : aucune connexion à Google Fonts) -->
+<link href="/assets/fonts.css?v=1" rel="stylesheet"/>
+<link href="/styles.css?v=35" rel="stylesheet"/>
+<!-- pré-masquage anti-flash de l'entrée hero (retiré si Motion ne prend pas la main) -->
+<script>(function(){if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;document.documentElement.classList.add('js-anim');setTimeout(function(){document.documentElement.classList.remove('js-anim');},1500);})();</script>
+</head>
+<body>
+<!-- ============ ATMOSPHÈRE ============ -->
+<div aria-hidden="true" class="grain"></div>
+<div aria-hidden="true" class="aura"><span class="ax ax1"></span><span class="ax ax2"></span><span class="ax ax3"></span><span class="ax ax4"></span><span class="ax ax5"></span><span class="ax ax6"></span><span class="ax ax7"></span><span class="ax ax8"></span></div>
+<!-- ============ BARRE DU HAUT ============ -->
+<header class="topbar" id="topbar">
+<a aria-label="Aireo, retour en haut" class="brand" href="#top">
+<span class="word word--sm">
+<span class="ai">A</span><span class="ai l-i">i</span><span class="ink">r</span><span class="ink">e</span><span class="ink">o</span><span class="dot">.</span>
+</span>
+<span aria-hidden="true" class="brand-tag">intelligence audio</span>
+</a>
+<nav aria-label="Sections" class="nav">
+<a href="#methode">How it works</a>
+<a href="#automix">Autolevel</a>
+<a href="#aaf">The AAF</a>
+<a href="#apercu">The app</a>
+<a href="#tarifs">Pricing</a>
+<a href="#faq">FAQ</a>
+</nav>
+<div class="topbar-right">
+<div aria-label="Langue / Language" class="lang" role="group"><a class="lang-btn" href="/fr/" hreflang="fr">FR</a><span class="lang-sep">/</span><a aria-current="page" class="lang-btn is-active" href="/" hreflang="en">EN</a></div>
+<a class="btn btn--solid btn--sm" href="#tarifs">Buy</a>
+</div>
+</header>
+<main id="top">
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+<p class="kicker"><span class="tc">00:00</span> · <span>Solo podcast or interview · your sound handled automatically</span></p>
+<h1 class="hero-title">Drop your voices.<br/>Aireo takes care of it.</h1>
+<p class="hero-chip">⏱ Your voices, ready in minutes</p>
+<p class="hero-sub"><strong>Voice cleanup and autolevel, built for podcasts.</strong> A solo voice, or several mics recorded at once. Aireo sets the sound (de-reverb, de-noise, mouth noise, breaths, room echo) and above all <strong>balances your mics' levels against each other</strong>: whoever's talking, you hear them. You get a base that's ready to mix. <strong>Everything stays on your machine.</strong></p>
+<div class="hero-cta">
+<a class="btn btn--solid" href="#tarifs">⬇ Try free — 7 days</a>
+<a class="btn btn--ghost" href="#demo">▶ Hear the before / after</a>
+</div>
+<p class="hero-plat tc"><span aria-hidden="true" class="hero-plat-dot"></span><span>For macOS (Apple silicon) · Windows soon · No card required · You only pay to export</span></p>
+<!-- Module Avant / Après, visuel (glisser) + écoute audio · un seul module pour tous les exemples -->
+<figure class="ab" id="demo">
+<!-- Sélecteur d'exemples. Déposez les fichiers dans assets/ pour activer un onglet (sinon « à venir »). -->
+<div aria-label="Choisir un exemple à écouter" class="ab-tabs" role="tablist">
+<button class="ab-tab is-active" data-apres="/assets/ex-multimic-mic1-apres.m4a" data-apres-2="/assets/ex-multimic-mic2-apres.m4a" data-avant="/assets/ex-multimic-mic1-avant.m4a" data-avant-2="/assets/ex-multimic-mic2-avant.m4a" data-key="multimic" data-multi="true" data-note="Before: 2 raw mics (Mic 1 + Mic 2). After: both tracks processed by Aireo — bleed removed, levels balanced." role="tab" type="button">Mixed mics</button>
+<button class="ab-tab" data-apres="/assets/ex-echo-apres.m4a" data-avant="/assets/ex-echo-avant.m4a" data-key="echo" data-note="Room echo tamed." role="tab" type="button">Room echo</button>
+<button class="ab-tab" data-apres="/assets/ex-bouche-apres.m4a" data-avant="/assets/ex-bouche-avant.m4a" data-key="bouche" data-note="Mouth noises cleaned up." role="tab" type="button">Mouth noise</button>
+<button class="ab-tab" data-apres="/assets/ex-resto-apres.m4a" data-avant="/assets/ex-resto-avant.m4a" data-key="resto" data-note="Voice caught on a phone or a cheap mic, rebuilt (missing frequencies recreated)." role="tab" type="button">Restore</button>
+</div>
+<div class="ab-frame">
+<div aria-hidden="true" class="ab-rail">
+<span class="tc">0:00</span><span class="tc">0:08</span><span class="tc">0:16</span><span class="tc">0:24</span><span class="tc">0:32</span>
+</div>
+<canvas aria-label="Comparaison visuelle d'une voix avant et après traitement par Aireo" class="ab-canvas" height="360" id="abCanvas" role="img" width="1600"></canvas>
+<div aria-label="Comparaison deux pistes avant et après traitement" hidden="" id="abDual">
+<div class="ab-track-row">
+<span class="ab-track-lbl">Mic 1</span>
+<canvas class="ab-canvas--track" id="abTrack1"></canvas>
+</div>
+<div class="ab-track-row">
+<span class="ab-track-lbl">Mic 2</span>
+<canvas class="ab-canvas--track" id="abTrack2"></canvas>
+</div>
+</div>
+<div aria-label="Glisser pour comparer avant et après" aria-valuemax="100" aria-valuemin="0" aria-valuenow="50" class="ab-divider" id="abDivider" role="slider" tabindex="0">
+<span class="ab-knob"></span>
+</div>
+<span class="ab-tag ab-tag--before"><span>Before</span></span>
+<span class="ab-tag ab-tag--after"><span>After</span></span>
+</div>
+<!-- Lecteur audio : la barre pilote l'écoute (gauche = brut, droite = traité) -->
+<div class="ab-audio" id="abAudio">
+<button aria-label="Lire l'extrait" class="ab-play" id="abPlay" type="button">
+<span aria-hidden="true" class="ab-play-icon">▶</span><span class="ab-play-label">Listen</span>
+</button>
+<span class="ab-vol">
+<svg aria-hidden="true" class="ab-vol-icon" fill="currentColor" height="14" viewbox="0 0 16 16" width="14"><path d="M9 2.5a.5.5 0 0 1 .8-.4l3.2 2.7A2 2 0 0 1 13.5 6.5v3a2 2 0 0 1-.5 1.3L9.8 13.9a.5.5 0 0 1-.8-.4V2.5zM7.5 5.3A.5.5 0 0 0 7 5H3.5A1.5 1.5 0 0 0 2 6.5v3A1.5 1.5 0 0 0 3.5 11H7a.5.5 0 0 0 .5-.5V5.3z"></path><path d="M9 5.8A3 3 0 0 1 9 10.2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.2"></path></svg>
+<input aria-label="Volume de lecture" class="ab-vol-range" id="abVol" max="100" min="0" type="range" value="50"/>
+</span>
+<span class="ab-soon tc" hidden="" id="abSoon">audio sample in preparation</span>
+</div>
+<p class="ab-note tc" id="abNote">Before: your 2 raw mics played together. After: Aireo's single output.</p>
+</figure>
+</section>
+<!-- ============ LE PROBLÈME ============ -->
+<section class="prob reveal" id="probleme">
+<p class="lead">Save hours. Deliver without doubting the sound.</p>
+<p class="prob-body">Sound isn't your job: EQ-ing track by track, riding every level, listening back ten times wondering if it “holds up”… It eats your time and always leaves a doubt at delivery. Aireo takes care of it, you move on to what matters, sure of a pro result.</p>
+</section>
+<!-- ============ COMMENT ÇA MARCHE ============ -->
+<section class="method reveal" id="methode">
+<header class="sec-head">
+<p class="tc-eyebrow"><span>How it works</span></p>
+<h2 class="sec-title">As simple as a drag-and-drop.</h2>
+</header>
+<ol class="steps">
+<li class="step">
+<span class="step-tc tc">You drop</span>
+<h3>Import your files</h3>
+<p>Drag your AAF or your WAV files into Aireo. It detects and sorts the voices, the music and the FX, all on its own.</p>
+</li>
+<li class="step step--opt">
+<span class="step-tc tc">Optional</span>
+<h3>Adjust (or don't)</h3>
+<p>Everything is already set automatically. You touch nothing, or, if you want, you fine-tune the result voice by voice. Nothing is required.</p>
+</li>
+<li class="step">
+<span class="step-tc tc">You collect</span>
+<h3>Export</h3>
+<p>Get your clean files back: ready to publish for a single voice, or a tidy, mix-ready session for a full edit.</p>
+</li>
+</ol>
+<p class="method-foot">In short: drop your files, click “Run”, done. Everything else is optional.</p>
+</section>
+<!-- ============ POURQUOI LES PISTES SÉPARÉES (comparatif) ============ -->
+<section class="compare reveal" id="pistes">
+<header class="sec-head">
+<p class="tc-eyebrow"><span>Why it works</span></p>
+<h2 class="sec-title">Start from each voice, not the finished mix.</h2>
+<p class="sec-desc">When you record several people, each one has their own mic. The easy path is to work on the version where all the voices are already blended together. The problem: you can't rescue a voice that's too loud anymore, and you hear everyone's background noise non-stop. Aireo starts from each person's voice separately, so it can really clean it.</p>
+</header>
+<div class="cmp-grid">
+<article class="cmp cmp--bad">
+<header class="cmp-head">
+<span aria-hidden="true" class="cmp-ico">✕</span>
+<h3>The already-mixed file</h3>
+<p class="cmp-sub">the most common reflex</p>
+</header>
+<ul class="cmp-list">
+<li>You hear everyone's background noise, non-stop</li>
+<li>A voice badly set or too loud? No way to fix it</li>
+<li>No way to separate the voices anymore: it's locked</li>
+<li>Doing it by hand and well is long and technical, easily botched</li>
+</ul>
+</article>
+<article class="cmp cmp--good">
+<header class="cmp-head">
+<span aria-hidden="true" class="cmp-ico">✓</span>
+<h3>Aireo, from each voice</h3>
+<p class="cmp-sub">your original recordings</p>
+</header>
+<ul class="cmp-list">
+<li>Starts from your original recordings: one voice per mic</li>
+<li>Lines the mics up on its own</li>
+<li>Cleans up what each mic catches from the other voices</li>
+<li>Cleans and balances each voice, then brings them together</li>
+</ul>
+</article>
+</div>
+</section>
+<!-- ============ AUTOLEVEL MULTI-MICROS (différenciateur unique) ============ -->
+<section class="automix reveal" id="automix">
+<div class="automix-text">
+<p class="tc-eyebrow automix-accent"><span>Multi-mic automix</span></p>
+<h2 class="sec-title">Several mics, balanced on their own. On your computer, not in the cloud.</h2>
+<p class="automix-body">Aireo balances your mics against each other and removes what each one catches from the others (the bleed), <strong>on your computer, as a one-time purchase</strong>. And it hands you a <strong>mix-ready session</strong>, not a frozen file. Whoever's talking, you hear them. Your voices never leave your machine, and the final mix stays yours.</p>
+<ul class="automix-checks">
+<li>All automatic: zero mic-by-mic tweaking</li>
+<li>Your mics balanced against each other: whoever talks, you hear them</li>
+<li>100% on your computer: your voices are never uploaded</li>
+<li>Each mic cleaned of what it catches from the others (the bleed)</li>
+<li>Out comes a mix-ready session, not a frozen file</li>
+</ul>
+</div>
+<!-- Visuel : animation autolevel (artefact fourni), timeline isolée via CSS injecté (script.js) -->
+<iframe class="aaf-embed" id="automixViz" loading="lazy" scrolling="no" src="/assets/automix-anim.html" title="Aireo · plusieurs micros équilibrés automatiquement (autolevel)"></iframe>
+</section>
+<!-- ============ AAF RECONSTRUIT ============ -->
+<section class="aaf reveal" id="aaf">
+<div class="aaf-text">
+<p class="tc-eyebrow aaf-accent"><span>The pre-mix sort-out</span> <span class="beta">Beta</span></p>
+<h2 class="sec-title">Sorted like a mixer, before the mix.</h2>
+<p class="aaf-body">You get your edit back, ready for the final tweaks, with the voices off your mind: Aireo has <strong>sorted them track by track</strong>, cleaned them and put them back exactly where they were (original timecode kept). You reopen your <strong>AAF session</strong> in Premiere, DaVinci or Pro Tools, and all that's left is to finish the mix.</p>
+<ul class="aaf-checks">
+<li>Voices isolated, one per track</li>
+<li>Music laid out in a staggered pattern</li>
+<li>FX sorted and grouped</li>
+<li>Every sound kept at its original timecode</li>
+</ul>
+</div>
+<!-- Visuel : animation « tri d'avant-mix » (artefact fourni). La timeline est isolée
+         (colonne texte masquée) et l'iframe est dimensionnée par script.js, voir AAF TIMELINE. -->
+<iframe class="aaf-embed" id="aafTimeline" loading="lazy" scrolling="no" src="/assets/tri-anim.html" title="Aireo · la session AAF triée par catégories"></iframe>
+</section>
+<!-- ============ 100% LOCAL ============ -->
+<section class="local reveal" id="local">
+<h2 class="local-title">Nothing leaves the room.</h2>
+<p class="local-body">Most cleanup tools live online. Aireo does the opposite: it runs entirely on your machine, no upload, no account, no cloud. Your rushes and your clients' voices never touch a server. Here, confidentiality isn't a setting. It's the architecture.</p>
+</section>
+<!-- ============ MULTI-PLATEFORMES ============ -->
+<section class="plat reveal" id="plateformes">
+<header class="sec-head">
+<p class="tc-eyebrow"><span>Output level</span></p>
+<h2 class="sec-title">One render per destination.</h2>
+<p class="sec-desc">Pick your targets, Aireo sets the levels of each export for you. Podcast (Apple, Spotify, Deezer, YouTube) or broadcast (TV, Radio, Netflix).</p>
+</header>
+<div class="dest-viz" id="destViz">
+<!-- PODCAST -->
+<div class="dest-group">
+<p class="dest-group-lbl tc">Podcast platforms</p>
+<div class="dest-cards">
+<div class="dest-card dest-card--default">
+<div aria-hidden="true" class="dest-card-icon"><svg fill="currentColor" height="14" viewbox="0 0 20 16" width="18"><rect height="8" rx="1" width="3" x="0" y="8"></rect><rect height="13" rx="1" width="3" x="4.25" y="3"></rect><rect height="16" rx="1" width="3" x="8.5" y="0"></rect><rect height="11" rx="1" width="3" x="12.75" y="5"></rect><rect height="6" rx="1" width="3" x="17" y="10"></rect></svg></div>
+<div class="dest-card-info">
+<span class="dest-card-name">Spotify <span class="dest-badge">DEFAULT</span></span>
+<div class="dest-level"><div class="dest-level-bar" style="--pct:64%"></div></div>
+<span class="dest-card-desc">Podcast reference · −14 LUFS · −1 dBTP</span>
+</div>
+</div>
+<div class="dest-card">
+<div aria-hidden="true" class="dest-card-icon"><svg fill="currentColor" height="14" viewbox="0 0 20 16" width="18"><rect height="8" rx="1" width="3" x="0" y="8"></rect><rect height="13" rx="1" width="3" x="4.25" y="3"></rect><rect height="16" rx="1" width="3" x="8.5" y="0"></rect><rect height="11" rx="1" width="3" x="12.75" y="5"></rect><rect height="6" rx="1" width="3" x="17" y="10"></rect></svg></div>
+<div class="dest-card-info">
+<span class="dest-card-name">Apple Podcasts</span>
+<div class="dest-level"><div class="dest-level-bar" style="--pct:56%"></div></div>
+<span class="dest-card-desc">Apple's recommendation · −16 LUFS · −1 dBTP</span>
+</div>
+</div>
+<div class="dest-card">
+<div aria-hidden="true" class="dest-card-icon"><svg fill="currentColor" height="14" viewbox="0 0 20 16" width="18"><rect height="8" rx="1" width="3" x="0" y="8"></rect><rect height="13" rx="1" width="3" x="4.25" y="3"></rect><rect height="16" rx="1" width="3" x="8.5" y="0"></rect><rect height="11" rx="1" width="3" x="12.75" y="5"></rect><rect height="6" rx="1" width="3" x="17" y="10"></rect></svg></div>
+<div class="dest-card-info">
+<span class="dest-card-name">YouTube</span>
+<div class="dest-level"><div class="dest-level-bar" style="--pct:64%"></div></div>
+<span class="dest-card-desc">Normalises loud peaks · −14 LUFS · −1 dBTP</span>
+</div>
+</div>
+<div class="dest-card">
+<div aria-hidden="true" class="dest-card-icon"><svg fill="currentColor" height="14" viewbox="0 0 20 16" width="18"><rect height="8" rx="1" width="3" x="0" y="8"></rect><rect height="13" rx="1" width="3" x="4.25" y="3"></rect><rect height="16" rx="1" width="3" x="8.5" y="0"></rect><rect height="11" rx="1" width="3" x="12.75" y="5"></rect><rect height="6" rx="1" width="3" x="17" y="10"></rect></svg></div>
+<div class="dest-card-info">
+<span class="dest-card-name">Deezer</span>
+<div class="dest-level"><div class="dest-level-bar" style="--pct:64%"></div></div>
+<span class="dest-card-desc">One notch below Spotify · −14 LUFS · −1 dBTP</span>
+</div>
+</div>
+<div class="dest-card">
+<div aria-hidden="true" class="dest-card-icon"><svg fill="currentColor" height="14" viewbox="0 0 20 16" width="18"><rect height="8" rx="1" width="3" x="0" y="8"></rect><rect height="13" rx="1" width="3" x="4.25" y="3"></rect><rect height="16" rx="1" width="3" x="8.5" y="0"></rect><rect height="11" rx="1" width="3" x="12.75" y="5"></rect><rect height="6" rx="1" width="3" x="17" y="10"></rect></svg></div>
+<div class="dest-card-info">
+<span class="dest-card-name">Amazon Music</span>
+<div class="dest-level"><div class="dest-level-bar" style="--pct:64%"></div></div>
+<span class="dest-card-desc">More headroom on peaks · −14 LUFS · −2 dBTP</span>
+</div>
+</div>
+<div class="dest-card">
+<div aria-hidden="true" class="dest-card-icon"><svg fill="currentColor" height="14" viewbox="0 0 20 16" width="18"><rect height="8" rx="1" width="3" x="0" y="8"></rect><rect height="13" rx="1" width="3" x="4.25" y="3"></rect><rect height="16" rx="1" width="3" x="8.5" y="0"></rect><rect height="11" rx="1" width="3" x="12.75" y="5"></rect><rect height="6" rx="1" width="3" x="17" y="10"></rect></svg></div>
+<div class="dest-card-info">
+<span class="dest-card-name">Universal distribution</span>
+<div class="dest-level"><div class="dest-level-bar" style="--pct:64%"></div></div>
+<span class="dest-card-desc">Safe everywhere compromise · −14 LUFS · −1 dBTP</span>
+</div>
+</div>
+</div>
+</div>
+<!-- BROADCAST -->
+<div class="dest-group dest-group--broadcast">
+<p class="dest-group-lbl tc">Broadcast · TV · Radio</p>
+<div class="dest-cards">
+<div class="dest-card">
+<div aria-hidden="true" class="dest-card-icon"><svg fill="currentColor" height="14" viewbox="0 0 20 16" width="18"><rect height="8" rx="1" width="3" x="0" y="8"></rect><rect height="13" rx="1" width="3" x="4.25" y="3"></rect><rect height="16" rx="1" width="3" x="8.5" y="0"></rect><rect height="11" rx="1" width="3" x="12.75" y="5"></rect><rect height="6" rx="1" width="3" x="17" y="10"></rect></svg></div>
+<div class="dest-card-info">
+<span class="dest-card-name">TV</span>
+<div class="dest-level"><div class="dest-level-bar" style="--pct:28%"></div></div>
+<span class="dest-card-desc">European broadcast standard · −23 LUFS · −3 dBTP</span>
+</div>
+</div>
+<div class="dest-card">
+<div aria-hidden="true" class="dest-card-icon"><svg fill="currentColor" height="14" viewbox="0 0 20 16" width="18"><rect height="8" rx="1" width="3" x="0" y="8"></rect><rect height="13" rx="1" width="3" x="4.25" y="3"></rect><rect height="16" rx="1" width="3" x="8.5" y="0"></rect><rect height="11" rx="1" width="3" x="12.75" y="5"></rect><rect height="6" rx="1" width="3" x="17" y="10"></rect></svg></div>
+<div class="dest-card-info">
+<span class="dest-card-name">Netflix</span>
+<div class="dest-level"><div class="dest-level-bar" style="--pct:12%"></div></div>
+<span class="dest-card-desc">Netflix specification · −27 LUFS · −2 dBTP</span>
+</div>
+</div>
+<div class="dest-card">
+<div aria-hidden="true" class="dest-card-icon"><svg fill="currentColor" height="14" viewbox="0 0 20 16" width="18"><rect height="8" rx="1" width="3" x="0" y="8"></rect><rect height="13" rx="1" width="3" x="4.25" y="3"></rect><rect height="16" rx="1" width="3" x="8.5" y="0"></rect><rect height="11" rx="1" width="3" x="12.75" y="5"></rect><rect height="6" rx="1" width="3" x="17" y="10"></rect></svg></div>
+<div class="dest-card-info">
+<span class="dest-card-name">Radio</span>
+<div class="dest-level"><div class="dest-level-bar" style="--pct:84%"></div></div>
+<span class="dest-card-desc">Hot brickwall · −9 dBTP ceiling</span>
+</div>
+</div>
+</div>
+</div>
+<!-- FICHIERS DE SORTIE -->
+<div class="dest-outputs">
+<p class="dest-group-lbl tc">Output formats · your choice</p>
+<div class="dest-out-cards">
+<div class="dest-out">
+<div aria-hidden="true" class="dest-out-icon dest-out-icon--aaf"><svg fill="currentColor" height="18" viewbox="0 0 20 20" width="18"><rect height="2" rx="1" width="14" x="3" y="4"></rect><rect height="2" rx="1" width="14" x="3" y="9"></rect><rect height="2" rx="1" width="9" x="3" y="14"></rect></svg></div>
+<div>
+<p class="dest-out-name">AAF <span class="dest-tier-badge tc">Pro</span></p>
+<p class="dest-out-desc">Voices back in your session · positions, timecodes &amp; handles kept</p>
+</div>
+</div>
+<div class="dest-out">
+<div aria-hidden="true" class="dest-out-icon dest-out-icon--wav"><svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" viewbox="0 0 20 20" width="18"><path d="M1 10 Q3 4 5 10 Q7 16 9 10 Q11 4 13 10 Q15 16 17 10 Q18 7 19 10"></path></svg></div>
+<div>
+<p class="dest-out-name">WAV tracks</p>
+<p class="dest-out-desc">Each voice exported separately · ready to drop in any DAW</p>
+</div>
+</div>
+<div class="dest-out">
+<div aria-hidden="true" class="dest-out-icon dest-out-icon--premix"><svg fill="currentColor" height="18" viewbox="0 0 20 20" width="18"><path d="M3 7h6v2H3zm0 4h6v2H3zm8-5 6 4-6 4V6z"></path></svg></div>
+<div>
+<p class="dest-out-name">Voice premix <span class="dest-si-besoin tc">if needed</span></p>
+<p class="dest-out-desc">All voices balanced into one stereo file · ready to place</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ============ TOUT-EN-UN ============ -->
+<section class="chain reveal" id="chaine">
+<header class="sec-head">
+<h2 class="sec-title">One all-in-one tool.</h2>
+<p class="sec-desc">No stacking plugins, no technical vocabulary. Aireo spots and fixes every common voice flaw, you'll probably recognise yours:</p>
+</header>
+<div class="chain-rail" id="chainRail">
+<article class="link link--base"><span class="link-tc tc">Light</span><h3>Room echo</h3><p a="" an="" bathroom.="" echo="" empty="" fades."="" in="" like="" or="" room="" the="" voice,="">That “far-away</p></article>
+<article class="link link--base"><span class="link-tc tc">Light</span><h3>Background noise</h3><p>The constant hiss behind the voice: air-con, computer, fan, street. Gone.</p></article>
+<article class="link link--base"><span class="link-tc tc">Light</span><h3>Tone balance</h3><p>A voice too dull, too nasal or too harsh? Aireo rebalances it to sound natural.</p></article>
+<article class="link link--base"><span class="link-tc tc">Light</span><h3>Mic pops</h3><p a="" close.="" hard,="" hits="" mic="" softened."="" the="" too="" when="" word="">That dull “pop</p></article>
+<article class="link link--base"><span class="link-tc tc">Light</span><h3 sounds"="">Whistling “S</h3><p and="" ear.="" harsh="" hiss,="" on="" or="" smoothed."="" sounds="" that="" the="" whistle="" “sh"="">The “s</p></article>
+<article class="link link--base"><span class="link-tc tc">Light</span><h3>Mouth noises</h3><p>The little clicks and saliva smacks between words. Cleaned up.</p></article>
+<article class="link link--base"><span class="link-tc tc">Light</span><h3>Loud breaths</h3><p>The loud in-breaths between sentences, calmed, without sounding robotic.</p></article>
+<article class="link link--base"><span class="link-tc tc">Light</span><h3>Uneven volume</h3><p>A voice jumping from loud to quiet word to word? Aireo evens it out at the right level.</p></article>
+<article class="link link--star"><span class="link-tc tc">Pro</span><h3>✨ Generative restore</h3><p>Voice caught on a phone or a cheap mic? The AI rebuilds the missing frequencies for a crisp, studio-like result.</p></article>
+</div>
+</section>
+<!-- ============ APERÇU DE L'APP (captures réelles) ============ -->
+<section class="shots reveal" id="apercu">
+<header class="sec-head">
+<p class="tc-eyebrow"><span>Inside Aireo</span></p>
+<h2 class="sec-title">A real app, not a promise.</h2>
+<p class="sec-desc">Drop your files, let it run, get them back clean. Here is what it actually looks like.</p>
+</header>
+<figure class="shot">
+<img alt="Aireo audio processing screen: several voices being cleaned up automatically (reverb, noise, EQ, levels) for a podcast" decoding="async" height="968" loading="lazy" src="/assets/app-traitement-voix-wav.png" width="1821"/>
+<figcaption>Processing, file by file. Reverb, cleanup, EQ, output levels: all on Auto, adjustable if you want.</figcaption>
+</figure>
+<figure class="shot">
+<img alt="Aireo AAF session timeline sorted by category: voices, music, FX and ambiences split track by track" decoding="async" height="974" loading="lazy" src="/assets/app-session-aaf-timeline.png" width="1819"/>
+<figcaption>The sorted session. Voices isolated, music, FX and ambiences grouped by category, every sound at its timecode.</figcaption>
+</figure>
+<figure class="shot">
+<img alt="Aireo 'Ready to publish' export screen with the processed voice files, ready to publish" decoding="async" height="550" loading="lazy" src="/assets/app-export-pret-a-diffuser.png" width="1110"/>
+<figcaption>Export. Your clean files, at the right platform level, ready to publish.</figcaption>
+</figure>
+</section>
+<!-- ============ QUI FAIT AIREO (E-E-A-T) ============ -->
+<section class="maker reveal" id="maker">
+<p class="tc-eyebrow maker-eyebrow"><span>Why Aireo</span></p>
+<h2 class="maker-title">Pro sound, to launch your show.</h2>
+<p class="maker-body maker-body--soft">Our goal is simple: give podcasters and editors a studio-grade sound, so they can break into the pro world more easily, without costly gear or years of mixing behind them.</p>
+</section>
+<!-- ============ TARIFS ============ -->
+<section class="pricing reveal" id="tarifs">
+<header class="sec-head pricing-head">
+<p class="tc-eyebrow"><span>Pricing</span></p>
+<h2 class="sec-title">Buy it once. It's yours.</h2>
+<p class="sec-desc"><strong>Download and hear the result on your own files, for free. You only pay to export.</strong> Perpetual license, no subscription. <strong>Launch pricing, reserved for the first 1000 downloads.</strong></p>
+</header>
+<div class="tiers">
+<!-- ESSAI -->
+<article class="tier tier--trial" id="tier-trial">
+<header class="tier-top">
+<h3 class="tier-name">Free trial</h3>
+<p class="tier-for">Test on your own files before you decide.</p>
+</header>
+<div class="tier-price">
+<span class="price-now">Free</span>
+<span class="price-meta tc">7 days · no card required</span>
+</div>
+<a class="btn btn--trial js-dl" data-note="trialPlat" href="#" id="trialDownload" rel="noopener">⬇ Télécharger</a>
+<p aria-live="polite" class="tier-plat tc" id="trialPlat"></p>
+<ul class="tier-feats">
+<li>All Pro features active during the trial</li>
+<li>Hear the result on your own voice files</li>
+<li>Export unlocked when you buy</li>
+</ul>
+</article>
+<!-- LIGHT -->
+<article class="tier" id="tier-light">
+<header class="tier-top">
+<h3 class="tier-name">Light</h3>
+<p class="tier-for">For the solo podcaster and the video editor, one voice, cleaned up.</p>
+</header>
+<div class="tier-price">
+<span class="price-now">79 €</span>
+<span class="price-was tc">was €119</span>
+<span class="price-meta tc">one-time · lifetime license</span>
+</div>
+<a class="btn btn--ghost tier-buy" data-tier="light" href="#tarifs">Buy at €79</a>
+<ul class="tier-feats">
+<li>Full auto-prep: de-reverb, de-noise, EQ, levels</li>
+<li>Podcast levels: Apple Podcasts, Spotify, Deezer, YouTube</li>
+<li>Broadcast levels: TV, Radio, Netflix</li>
+<li>“3 clicks → ready to air”</li>
+<li>WAV export: clean voice, ready to mix</li>
+<li>48 kHz / 24-bit · A/B before / after</li>
+<li>100% local</li>
+</ul>
+</article>
+<!-- PRO -->
+<article class="tier tier--feature" id="tier-pro">
+<span class="tier-badge tc">Most complete</span>
+<header class="tier-top">
+<h3 class="tier-name">Pro</h3>
+<p class="tier-for">For multi-mic interviews, video editors &amp; serious podcasters.</p>
+</header>
+<div class="tier-price">
+<span class="price-now">189 €</span>
+<span class="price-was tc">was 249 €</span>
+<span class="price-meta tc">one-time · lifetime license</span>
+</div>
+<a class="btn btn--solid tier-buy" data-tier="pro" href="#tarifs">Buy at €189</a>
+<ul class="tier-feats">
+<li class="feat-head">Everything in Light, plus:</li>
+<li class="feat-star">Multi-mic autolevel: your mics balanced for you, cleaned of each other's voices</li>
+<li>AAF import / export <span class="beta">Beta</span>: sorted session, mixed voices, ready to mix</li>
+<li>Fine cleanup: mic pops, sibilance, mouth noises, breaths</li>
+<li>Per-voice settings · batch · voice match</li>
+<li>Voice tracks separate or combined into one file</li>
+<li>Generative restore (missing frequencies)</li>
+</ul>
+</article>
+<!-- ENTREPRISE / ÉCOLE -->
+<article class="tier tier--enterprise" id="tier-ent">
+<header class="tier-top">
+<h3 class="tier-name">Enterprise / School</h3>
+<p class="tier-for">For studios, schools &amp; teams.</p>
+</header>
+<div class="tier-price">
+<span class="price-now price-now--quote">On quote</span>
+<span class="price-meta tc">volume &amp; site licensing</span>
+</div>
+<a class="btn btn--ghost tier-buy" data-tier="enterprise" href="mailto:contact@aireo.studio?subject=Aireo%20-%20Licence%20Entreprise%20%2F%20École">Contact us</a>
+<ul class="tier-feats">
+<li>Multi-seat / site / classroom licenses</li>
+<li>Invoicing &amp; purchase orders</li>
+<li>Onboarding &amp; training</li>
+<li>Priority support</li>
+<li>All Pro features included</li>
+</ul>
+</article>
+</div>
+<p aria-live="polite" class="pricing-foot tc" id="checkoutNote" role="status">For macOS &amp; Windows · Lifetime license · No subscription · Secure payment via Lemon Squeezy · VAT included</p>
+</section>
+<!-- ============ FAQ (AEO) ============ -->
+<section class="faq reveal" id="faq">
+<header class="sec-head">
+<p class="tc-eyebrow"><span>Questions</span></p>
+<h2 class="sec-title">Frequently asked questions</h2>
+</header>
+<div class="faq-list">
+<details class="faq-item" open="">
+<summary>What is Aireo?</summary>
+<p>Aireo is local voice-cleanup software for podcast and broadcast. You import an AAF edit (Premiere, DaVinci, Pro Tools) or a folder of WAV files, and your voices come back ready to air, de-reverbed, de-noised, EQ-corrected and at the right platform level. Everything runs on your machine.</p>
+</details>
+<details class="faq-item">
+<summary>Does Aireo balance several mics automatically?</summary>
+<p>Yes, this is what sets Aireo apart. From your separate mic files, it balances their levels against each other and first removes background noise, room echo and what each mic catches from the other voices, so you get a clean, balanced base, ready to mix. Most tools only clean a single voice; Aireo balances several mics too.</p>
+</details>
+<details class="faq-item">
+<summary>Does Aireo remove mic bleed (crosstalk)?</summary>
+<p>Yes, automatically. When several mics record at once, each one also picks up the other people's voices, that's mic bleed (or crosstalk). Aireo analyses the mics together and removes that spill without hurting the voice or the natural feel. It's at the heart of its multi-mic automix.</p>
+</details>
+<details class="faq-item">
+<summary>How do you level several voices to the same volume?</summary>
+<p>Aireo does it automatically. It analyses all your speakers together and matches their loudness, so a quiet guest and a loud host sit at the same level, without you riding a single fader. That's the auto-leveling part of its multi-mic automix.</p>
+</details>
+<details class="faq-item">
+<summary>Does Aireo need multitrack files, or a single mixed file?</summary>
+<p>For the multi-mic automix, give it your multitrack: one file per mic. From separate tracks, Aireo balances and de-bleeds far better than from a single mixed file, where the voices are already glued together. For a solo voice, a single file is fine.</p>
+</details>
+<details class="faq-item">
+<summary>Does it work with remote recordings (Riverside, Zencastr…)?</summary>
+<p>Yes. Tools that record each guest on a separate track (like Riverside, Zencastr or SquadCast) are exactly what Aireo loves: it takes those multitrack files and auto-levels, cleans and de-bleeds them into a mix-ready base.</p>
+</details>
+<details class="faq-item">
+<summary>How is Aireo different from online cleanup tools?</summary>
+<p>Two things. First, Aireo runs 100% locally: nothing is uploaded, your voices stay with you. Second, it's a one-time purchase, not a per-hour subscription, and it hands you a mix-ready session rather than an already-mixed file. You keep control of the final mix.</p>
+</details>
+<details class="faq-item">
+<summary>Who makes Aireo?</summary>
+<p>Aireo is an independent tool, built with the logic of a real broadcast mix under the hood — so you get a pro level of finish without going through a studio.</p>
+</details>
+<details class="faq-item">
+<summary>Are my files sent to a server?</summary>
+<p>No. Aireo is 100% local: no upload, no account, no cloud. Your rushes and your clients' voices never leave your computer, confidentiality is built into the architecture, not an option to toggle.</p>
+</details>
+<details class="faq-item">
+<summary>Which formats does Aireo accept?</summary>
+<p>An AAF multitrack edit (Premiere, DaVinci, Pro Tools) or a folder of WAV files. Output is 48 kHz / 24-bit, with level presets for Apple Podcasts, Spotify, Deezer and YouTube, one render per destination.</p>
+</details>
+<details class="faq-item">
+<summary>What does Aireo do with my AAF?</summary>
+<p>It sorts it like a mixer would before mixing: voices isolated track by track, music laid out in a staggered pattern, FX sorted, with the voices cleaned along the way. Every sound stays at its original timecode; only the tracks get tidied. You get your session tidied up, with the voices mixed. AAF import/export is in beta: it keeps improving, and the free trial lets you check the result on your own session before exporting.</p>
+</details>
+<details class="faq-item">
+<summary>What's the difference between Light and Pro?</summary>
+<p>Light (€79) does it all on Auto, for one voice: WAV import and export, cleanup and platform levels in a few clicks. Pro (€189) adds multi-mic autolevel (your mics balanced against each other), AAF import / export (sorted, mix-ready session), fine cleanup (sibilance, mouth noises, breaths), per-voice settings, batch, voice match, separate stems and generative restoration.</p>
+</details>
+<details class="faq-item">
+<summary>Is there a free version? Can I try before I buy?</summary>
+<p>Yes. Download Aireo and process your own files for free: you hear the full before/after, on your own audio. Export (delivering your files) unlocks with the license. You only buy once you're convinced, and no card is needed to try.</p>
+</details>
+<details class="faq-item">
+<summary>Is it a subscription?</summary>
+<p>No. Aireo is a one-time purchase with a perpetual license, you buy it once and it's yours. No recurring fee. Payment is secured by Lemon Squeezy, VAT included.</p>
+</details>
+<details class="faq-item">
+<summary>Which systems does Aireo run on? Mac and Windows?</summary>
+<p>Aireo runs on macOS and on Windows, fully offline. On Mac it works on Apple Silicon (M1 to M4 chips) as well as Intel Macs, but an Apple Silicon chip is markedly faster: it offloads part of the processing to the GPU, whereas an Intel Mac does everything on the CPU (it works, but it's slower). macOS 12 (Monterey) or later is recommended for that GPU acceleration, macOS 11 (Big Sur) minimum. The Windows version (Windows 10 and 11, 64-bit) is on the way. Audio is processed at 48 kHz / 24-bit with a built-in A/B before/after so you can hear every change before you export.</p>
+</details>
+<details class="faq-item">
+<summary>What computer do I need to run Aireo?</summary>
+<p>A recent computer is enough. Minimum: 8 GB of RAM and about 3 GB of free disk space. Recommended: 16 GB of RAM for long sessions and multi-mic work. Aireo automatically adapts its memory use to your machine, splitting the work into slices based on available RAM, so even an entry-level computer works, just with a bit more compute time. A quiet mode keeps heat and fan noise down.</p>
+</details>
+<details class="faq-item">
+<summary>How long does processing take?</summary>
+<p>Count on roughly half the length of your recording on a recent Apple Silicon Mac (M1 to M4 chip): a 40-minute program comes out in about twenty minutes. Apple Silicon Macs are markedly faster than Intel Macs, which do everything on the CPU and therefore take longer. Aireo adapts to your computer, and everything runs locally, with no upload and no cloud queue.</p>
+</details>
+</div>
+</section>
+</main>
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+<div class="foot-brand">
+<span class="word word--sm">
+<span class="ai">A</span><span class="ai l-i">i</span><span class="ink">r</span><span class="ink">e</span><span class="ink">o</span><span class="dot">.</span>
+</span>
+<span class="foot-tag tc">intelligence audio</span>
+</div>
+<p class="foot-line">Voice cleanup for podcast &amp; broadcast. Runs on your machine.</p>
+<nav aria-label="Guides" class="foot-legal foot-guides"><a href="/remove-mic-bleed.html">Remove mic bleed</a><a href="/auphonic-alternative.html">Auphonic alternative</a><a href="/clean-voices-locally.html">Clean voices locally</a></nav><nav aria-label="Informations légales" class="foot-legal">
+<a href="/mentions-legales.html">Legal notice</a>
+<a href="/confidentialite.html">Privacy</a>
+</nav>
+<p class="foot-copy tc">© <span id="year">2026</span> Aireo</p>
+</footer>
+<!-- ============================================================
+     DONNÉES STRUCTURÉES (SEO / GEO / AEO)
+     Schema.org JSON-LD. ⚠️ Remplacez https://aireo.studio par votre domaine.
+     Ajoutez vos profils sociaux dans "sameAs" quand ils existeront.
+     ============================================================ -->
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://aireo.studio/#org",
+      "name": "Aireo",
+      "url": "https://aireo.studio/",
+      "logo": "https://aireo.studio/assets/og-cover.png",
+      "description": "Aireo cleans voices for podcast and broadcast. Everything runs locally.",
+      "sameAs": []
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aireo.studio/#website",
+      "url": "https://aireo.studio/",
+      "name": "Aireo",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://aireo.studio/#org"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://aireo.studio/#app",
+      "name": "Aireo",
+      "applicationCategory": "MultimediaApplication",
+      "applicationSubCategory": "Audio editing / voice cleanup",
+      "operatingSystem": "macOS, Windows",
+      "inLanguage": [
+        "fr",
+        "en"
+      ],
+      "url": "https://aireo.studio/",
+      "screenshot": "https://aireo.studio/assets/og-cover.png",
+      "publisher": {
+        "@id": "https://aireo.studio/#org"
+      },
+      "description": "Voice cleanup and multi-mic autolevel for podcast and broadcast: from separate files, Aireo balances your mics' levels against each other (with de-reverb, de-noise, mouth noises, breaths, room echo), platform levels, AAF and WAV import/export. 100% local.",
+      "featureList": [
+        "Multi-mic automix: auto-levels and balances your mics against each other, from separate files",
+        "Mic bleed / crosstalk removal (what each mic catches from the other voices)",
+        "De-reverb / room echo",
+        "De-noise",
+        "Mouth noises and breaths",
+        "Corrective EQ",
+        "De-plosives and de-essing",
+        "Platform levels (Apple Podcasts, Spotify, Deezer, YouTube)",
+        "AAF import / export, session sorted for the mix (voices isolated track by track, music staggered, FX sorted, every sound at its original timecode)",
+        "WAV import / export",
+        "Generative restore",
+        "100% local"
+      ],
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "EUR",
+        "lowPrice": "79",
+        "highPrice": "189",
+        "offerCount": "2",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Aireo Light",
+            "price": "79",
+            "priceCurrency": "EUR",
+            "category": "Perpetual license",
+            "url": "https://aireo.studio/#tarifs"
+          },
+          {
+            "@type": "Offer",
+            "name": "Aireo Pro",
+            "price": "189",
+            "priceCurrency": "EUR",
+            "category": "Perpetual license",
+            "url": "https://aireo.studio/#tarifs"
+          }
+        ]
+      },
+      "keywords": "podcast voice cleanup, multi-mic automix, multitrack podcast, mic bleed removal, crosstalk removal, auto-leveling, level multiple speakers, de-reverb, podcast audio cleanup, free trial, macOS, Windows"
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://aireo.studio/#howto",
+      "name": "How to clean your voices with Aireo",
+      "description": "Three steps to go from a raw voice to one that's ready to publish.",
+      "inLanguage": "en",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Import your files",
+          "text": "Drag your AAF or your WAV files into Aireo. It detects and sorts the voices, the music and the FX, all on its own.",
+          "url": "https://aireo.studio/#methode"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Adjust (or don't)",
+          "text": "Everything is already set automatically. You touch nothing, or, if you want, you fine-tune the result voice by voice. Nothing is required.",
+          "url": "https://aireo.studio/#methode"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Export",
+          "text": "Get your clean files back: ready to publish for a single voice, or a tidy, mix-ready session for a full edit.",
+          "url": "https://aireo.studio/#methode"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://aireo.studio/#faq",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Aireo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Aireo is local voice-cleanup software for podcast and broadcast. You import an AAF edit (Premiere, DaVinci, Pro Tools) or a folder of WAV files, and your voices come back ready to air, de-reverbed, de-noised, EQ-corrected and at the right platform level. Everything runs on your machine."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Aireo balance several mics automatically?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, this is what sets Aireo apart. From your separate mic files, it balances their levels against each other and first removes background noise, room echo and what each mic catches from the other voices, so you get a clean, balanced base, ready to mix. Most tools only clean a single voice; Aireo balances several mics too."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Aireo remove mic bleed (crosstalk)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, automatically. When several mics record at once, each one also picks up the other people's voices, that's mic bleed (or crosstalk). Aireo analyses the mics together and removes that spill without hurting the voice or the natural feel. It's at the heart of its multi-mic automix."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you level several voices to the same volume?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Aireo does it automatically. It analyses all your speakers together and matches their loudness, so a quiet guest and a loud host sit at the same level, without you riding a single fader. That's the auto-leveling part of its multi-mic automix."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Aireo need multitrack files, or a single mixed file?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For the multi-mic automix, give it your multitrack: one file per mic. From separate tracks, Aireo balances and de-bleeds far better than from a single mixed file, where the voices are already glued together. For a solo voice, a single file is fine."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it work with remote recordings (Riverside, Zencastr…)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Tools that record each guest on a separate track (like Riverside, Zencastr or SquadCast) are exactly what Aireo loves: it takes those multitrack files and auto-levels, cleans and de-bleeds them into a mix-ready base."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is Aireo different from online cleanup tools?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Two things. First, Aireo runs 100% locally: nothing is uploaded, your voices stay with you. Second, it's a one-time purchase, not a per-hour subscription, and it hands you a mix-ready session rather than an already-mixed file. You keep control of the final mix."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who makes Aireo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Aireo is an independent tool, built with the logic of a real broadcast mix under the hood — so you get a pro level of finish without going through a studio."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are my files sent to a server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Aireo is 100% local: no upload, no account, no cloud. Your rushes and your clients' voices never leave your computer, confidentiality is built into the architecture, not an option to toggle."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which formats does Aireo accept?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An AAF multitrack edit (Premiere, DaVinci, Pro Tools) or a folder of WAV files. Output is 48 kHz / 24-bit, with level presets for Apple Podcasts, Spotify, Deezer and YouTube, one render per destination."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does Aireo do with my AAF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It sorts it like a mixer would before mixing: voices isolated track by track, music laid out in a staggered pattern, FX sorted, with the voices cleaned along the way. Every sound stays at its original timecode; only the tracks get tidied. You get your session tidied up, with the voices mixed. AAF import/export is in beta: it keeps improving, and the free trial lets you check the result on your own session before exporting."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between Light and Pro?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Light (€79) does it all on Auto, for one voice: WAV import and export, cleanup and platform levels in a few clicks. Pro (€189) adds multi-mic autolevel (your mics balanced against each other), AAF import / export (sorted, mix-ready session), fine cleanup (sibilance, mouth noises, breaths), per-voice settings, batch, voice match, separate stems and generative restoration."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a free version? Can I try before I buy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Download Aireo and process your own files for free: you hear the full before/after, on your own audio. Export (delivering your files) unlocks with the license. You only buy once you're convinced, and no card is needed to try."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it a subscription?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Aireo is a one-time purchase with a perpetual license, you buy it once and it's yours. No recurring fee. Payment is secured by Lemon Squeezy, VAT included."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which systems does Aireo run on? Mac and Windows?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Aireo runs on macOS and on Windows, fully offline. On Mac it works on Apple Silicon (M1 to M4 chips) as well as Intel Macs, but an Apple Silicon chip is markedly faster: it offloads part of the processing to the GPU, whereas an Intel Mac does everything on the CPU (it works, but it's slower). macOS 12 (Monterey) or later is recommended for that GPU acceleration, macOS 11 (Big Sur) minimum. The Windows version (Windows 10 and 11, 64-bit) is on the way. Audio is processed at 48 kHz / 24-bit with a built-in A/B before/after so you can hear every change before you export."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What computer do I need to run Aireo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A recent computer is enough. Minimum: 8 GB of RAM and about 3 GB of free disk space. Recommended: 16 GB of RAM for long sessions and multi-mic work. Aireo automatically adapts its memory use to your machine, splitting the work into slices based on available RAM, so even an entry-level computer works, just with a bit more compute time. A quiet mode keeps heat and fan noise down."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does processing take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Count on roughly half the length of your recording on a recent Apple Silicon Mac (M1 to M4 chip): a 40-minute program comes out in about twenty minutes. Apple Silicon Macs are markedly faster than Intel Macs, which do everything on the CPU and therefore take longer. Aireo adapts to your computer, and everything runs locally, with no upload and no cloud queue."
+          }
+        }
+      ]
+    }
+  ]
+}</script>
+<!-- Lemon Squeezy : overlay de paiement (s'active dès que les URLs sont renseignées dans script.js) -->
+<script defer="" src="https://assets.lemonsqueezy.com/lemon.js"></script>
+<script src="/script.js?v=16"></script>
+<!-- Motion self-hébergé (zéro connexion externe, cohérent avec le « 100 % local ») : entrée premium du hero. -->
+<script defer="" src="/assets/motion.min.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', function () {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || !window.Motion) { document.documentElement.classList.remove('js-anim'); return; }
+    var hero = document.querySelectorAll('.hero .kicker, .hero-title, .hero-chip, .hero-sub, .hero-cta, .hero-plat, .ab');
+    if (hero.length) {
+      window.Motion.animate(hero,
+        { opacity: [0, 1], transform: ['translateY(22px)', 'translateY(0px)'] },
+        { duration: 0.75, delay: window.Motion.stagger(0.09, { startDelay: 0.08 }), ease: [0.16, 0.84, 0.34, 1] });
+    }
+    document.documentElement.classList.remove('js-anim');
+  });
+</script>
+</body>
+</html>

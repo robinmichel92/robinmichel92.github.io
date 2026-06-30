@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enlever la repisse entre plusieurs micros (podcast) | Aireo</title>
+<meta name="description" content="La repisse (diaphonie, mic bleed), c'est ce que chaque micro capte des autres voix. Pourquoi un noise gate ne suffit pas, et comment l'enlever automatiquement, en local, sur vos pistes de podcast.">
+<meta name="theme-color" content="#0e1216">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://aireo.studio/fr/enlever-la-repisse.html">
+<link rel="alternate" hreflang="fr" href="https://aireo.studio/fr/enlever-la-repisse.html">
+<link rel="alternate" hreflang="en" href="https://aireo.studio/remove-mic-bleed.html">
+<link rel="alternate" hreflang="x-default" href="https://aireo.studio/remove-mic-bleed.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Aireo">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://aireo.studio/fr/enlever-la-repisse.html">
+<meta property="og:title" content="Enlever la repisse entre plusieurs micros (podcast)">
+<meta property="og:description" content="Diaphonie, mic bleed : pourquoi un noise gate ne suffit pas sur des voix, et comment l'enlever automatiquement, en local.">
+<meta property="og:image" content="https://aireo.studio/assets/og-cover.png">
+<link rel="stylesheet" href="/assets/fonts.css?v=1">
+<link rel="stylesheet" href="/styles.css?v=32">
+<style>
+  .doc{max-width:772px;margin:0 auto;padding:132px var(--pad) 88px}
+  .doc-crumb{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--ink-mute);margin-bottom:26px}
+  .doc-crumb a{color:var(--ink-soft)}
+  .doc h1{font-family:var(--sans);font-weight:680;font-size:clamp(29px,5vw,45px);line-height:1.09;letter-spacing:-.02em;color:#fff;margin:0 0 18px}
+  .doc .lede{font-size:clamp(17px,2.4vw,20px);line-height:1.55;color:var(--ink);margin:0 0 8px}
+  .doc h2{font-size:clamp(21px,3vw,27px);font-weight:660;letter-spacing:-.01em;color:#fff;margin:50px 0 14px}
+  .doc h3{font-size:18px;font-weight:640;color:#fff;margin:26px 0 8px}
+  .doc p{font-size:16.5px;line-height:1.66;color:var(--ink-soft);margin:0 0 14px}
+  .doc ul{margin:0 0 18px;padding-left:0;list-style:none}
+  .doc ul li{position:relative;padding-left:25px;margin-bottom:9px;font-size:16.5px;line-height:1.6;color:var(--ink-soft)}
+  .doc ul li::before{content:"";position:absolute;left:3px;top:9px;width:7px;height:7px;border-radius:50%;background:var(--green)}
+  .doc strong{color:var(--ink)}
+  .doc a.inline{color:var(--green-soft);text-decoration:underline;text-underline-offset:2px}
+  .doc-steps{counter-reset:s;list-style:none;padding:0;margin:18px 0}
+  .doc-steps li{position:relative;padding:0 0 4px 44px;margin-bottom:16px;font-size:16.5px;line-height:1.6;color:var(--ink-soft)}
+  .doc-steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:-2px;width:28px;height:28px;border-radius:50%;border:1px solid var(--line-2);color:var(--green-soft);font-family:var(--mono);font-size:13px;display:flex;align-items:center;justify-content:center}
+  .doc-cta{margin:48px 0 8px;padding:28px;border:1px solid var(--line-2);border-radius:16px;background:var(--panel);text-align:center}
+  .doc-cta p{font-size:17px;color:var(--ink);margin:0 0 16px}
+  .doc-faq{margin-top:18px}
+  .doc-faq details{border-top:1px solid var(--line);padding:16px 0}
+  .doc-faq summary{font-weight:620;color:#fff;cursor:pointer;font-size:16.5px;list-style:none}
+  .doc-faq summary::-webkit-details-marker{display:none}
+  .doc-faq summary::before{content:"+ ";color:var(--green-soft);font-family:var(--mono)}
+  .doc-faq details[open] summary::before{content:"– "}
+  .doc-faq details[open] summary{margin-bottom:10px}
+  .doc-faq p{margin:0;font-size:16px;color:var(--ink-soft);line-height:1.6}
+  .doc-rel{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);font-size:14.5px;color:var(--ink-mute)}
+  .doc-rel a{color:var(--green-soft);text-decoration:underline;text-underline-offset:2px}
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<div class="aura" aria-hidden="true"><span class="ax ax1"></span><span class="ax ax2"></span><span class="ax ax3"></span><span class="ax ax4"></span><span class="ax ax5"></span><span class="ax ax6"></span><span class="ax ax7"></span><span class="ax ax8"></span></div>
+
+<header class="topbar">
+  <a class="brand" href="/fr/" aria-label="Aireo, accueil">
+    <span class="word word--sm"><span class="ai">A</span><span class="ai l-i">i</span><span class="ink">r</span><span class="ink">e</span><span class="ink">o</span><span class="dot">.</span></span>
+    <span class="brand-tag" aria-hidden="true">intelligence audio</span>
+  </a>
+  <nav class="nav" aria-label="Sections">
+    <a href="/fr/#automix">Autolevel</a>
+    <a href="/fr/#local">100 % local</a>
+    <a href="/fr/#tarifs">Tarifs</a>
+  </nav>
+  <div class="topbar-right">
+    <div class="lang" role="group" aria-label="Langue">
+      <a class="lang-btn is-active" href="/fr/enlever-la-repisse.html" hreflang="fr" aria-current="page">FR</a>
+      <span class="lang-sep">/</span>
+      <a class="lang-btn" href="/remove-mic-bleed.html" hreflang="en">EN</a>
+    </div>
+    <a class="btn btn--solid btn--sm" href="/fr/#tarifs">Essayer</a>
+  </div>
+</header>
+
+<main class="doc">
+  <p class="doc-crumb"><a href="/fr/">Aireo</a> · Guides · Enlever la repisse</p>
+
+  <h1>Enlever la repisse (diaphonie) entre plusieurs micros</h1>
+
+  <p class="lede">La repisse — ou <strong>diaphonie</strong>, « <strong>mic bleed</strong> » en anglais — c'est ce que le micro d'une personne capte des voix des autres quand plusieurs micros tournent en même temps. Sur des voix, un simple noise gate la coupe mal&nbsp;: il faut analyser les micros <em>ensemble</em>. Voici pourquoi, et comment l'enlever automatiquement.</p>
+
+  <h2>Qu'est-ce que la repisse&nbsp;?</h2>
+  <p>Dès que deux personnes parlent dans la même pièce avec chacune son micro, chaque micro capte sa voix… mais aussi, en plus faible et en décalé, celle des autres. C'est la repisse. À l'écoute, elle se traduit par une voix « doublée », un effet de pièce, et un bruit de fond permanent&nbsp;: même quand une seule personne parle, on entend les micros ouverts des autres.</p>
+  <p>Plus il y a de micros, plus le problème grandit, et plus il devient difficile à rattraper une fois les pistes mélangées. C'est pour ça qu'on travaille toujours mieux à partir des <strong>micros séparés</strong>, un fichier par personne.</p>
+
+  <h2>Pourquoi un noise gate ne suffit pas sur des voix</h2>
+  <p>La solution classique est le <strong>noise gate</strong> (porte de bruit)&nbsp;: il coupe un micro tant que le son passe sous un seuil. Sur une batterie, ça marche. Sur des voix, c'est une autre histoire&nbsp;:</p>
+  <ul>
+    <li>Il coupe brutalement les <strong>débuts et fins de mots</strong>, les respirations, les fins de phrase voisées&nbsp;: la voix devient hachée, artificielle.</li>
+    <li>Quand deux personnes parlent en même temps, le seuil ne sait plus quoi couper&nbsp;: la repisse passe quand même.</li>
+    <li>Il ne distingue pas la <strong>vraie voix</strong> du micro de la repisse des autres&nbsp;: les deux sont au-dessus du seuil.</li>
+  </ul>
+  <p>Pour faire propre, il faut comparer les micros entre eux, instant par instant, et déterminer qui parle vraiment — pas juste regarder un volume sur un seul micro.</p>
+
+  <h2>Comment enlever la repisse automatiquement</h2>
+  <p>L'approche fiable consiste à <strong>analyser tous les micros ensemble</strong>&nbsp;: à chaque instant, on identifie le micro qui porte la voix la plus directe, et on atténue sur les autres ce qu'ils captent de cette même voix. On préserve ainsi les vraies prises de parole et on enlève les fuites, sans hacher le son.</p>
+  <p>C'est exactement ce que fait <a class="inline" href="/fr/#automix">l'autolevel multi-micros d'Aireo</a>&nbsp;: à partir de vos fichiers de micros séparés, il&nbsp;:</p>
+  <ul>
+    <li><strong>équilibre les niveaux</strong> des micros entre eux (un invité discret et un animateur fort finissent au même volume)&nbsp;;</li>
+    <li><strong>retire la repisse</strong> que chaque micro capte des autres voix&nbsp;;</li>
+    <li>nettoie au passage la réverbération, le bruit de fond et l'écho de pièce&nbsp;;</li>
+    <li>fait tout cela <a class="inline" href="/fr/#local">100 % sur votre machine</a>, sans rien uploader.</li>
+  </ul>
+
+  <h2>En pratique, en trois gestes</h2>
+  <ol class="doc-steps">
+    <li>Glissez vos <strong>fichiers de micros séparés</strong> (un par personne) dans Aireo — ou un montage AAF depuis Premiere ou DaVinci.</li>
+    <li>Lancez. Aireo cale les micros, retire la repisse et nettoie chaque voix automatiquement.</li>
+    <li>Récupérez une base <strong>prête à mixer</strong>, ou des fichiers prêts à diffuser. L'original n'est jamais touché.</li>
+  </ol>
+  <p>Astuce&nbsp;: les enregistreurs et les outils à distance (type Riverside, Zencastr, SquadCast) qui sortent <strong>une piste par invité</strong> sont parfaits — c'est exactement ce dont Aireo a besoin pour bien retirer la repisse.</p>
+
+  <div class="doc-cta">
+    <p><strong>Testez sur vos propres pistes, gratuitement.</strong><br>Écoutez l'avant/après complet ; vous ne payez que pour exporter.</p>
+    <a class="btn btn--solid" href="/fr/#tarifs">Essayer Aireo</a>
+  </div>
+
+  <h2>Questions fréquentes</h2>
+  <div class="doc-faq">
+    <details open>
+      <summary>Repisse, diaphonie, mic bleed&nbsp;: c'est pareil&nbsp;?</summary>
+      <p>Oui. « Repisse » est le terme courant en studio, « diaphonie » le terme technique, « mic bleed » (ou crosstalk) l'équivalent anglais. Tous désignent ce qu'un micro capte des sources qu'il n'est pas censé enregistrer.</p>
+    </details>
+    <details>
+      <summary>Peut-on enlever la repisse d'un fichier déjà mélangé&nbsp;?</summary>
+      <p>Très difficilement&nbsp;: une fois les voix collées dans un seul fichier, elles ne sont plus séparables proprement. Le bon réflexe est de repartir des micros séparés, un fichier par personne. C'est de là qu'Aireo travaille.</p>
+    </details>
+    <details>
+      <summary>Faut-il s'y connaître en mixage&nbsp;?</summary>
+      <p>Non. Aireo fait l'analyse multi-micros et la suppression de repisse automatiquement&nbsp;: vous déposez vos fichiers, c'est traité tout seul. Aucun seuil à régler.</p>
+    </details>
+    <details>
+      <summary>Mes fichiers sont-ils envoyés sur un serveur&nbsp;?</summary>
+      <p>Non. Tout le traitement se fait sur votre ordinateur&nbsp;: aucun upload, aucun compte, aucun cloud.</p>
+    </details>
+  </div>
+
+  <p class="doc-rel">À lire aussi&nbsp;: <a href="/fr/nettoyer-voix-en-local.html">Nettoyer ses voix en local, sans cloud ni abonnement</a> · <a href="/fr/alternative-auphonic.html">Aireo, une alternative locale à Auphonic</a></p>
+</main>
+
+<footer class="foot">
+  <div class="foot-brand">
+    <span class="word word--sm"><span class="ai">A</span><span class="ai l-i">i</span><span class="ink">r</span><span class="ink">e</span><span class="ink">o</span><span class="dot">.</span></span>
+    <span class="foot-tag tc">intelligence audio</span>
+  </div>
+  <p class="foot-line">Nettoyage de voix pour podcast &amp; broadcast. Tourne sur votre machine.</p>
+  <nav class="foot-legal" aria-label="Informations légales">
+    <a href="/mentions-legales.html">Mentions légales</a>
+    <a href="/confidentialite.html">Confidentialité</a>
+  </nav>
+  <p class="foot-copy tc">© 2026 Aireo</p>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Aireo", "item": "https://aireo.studio/fr/" },
+        { "@type": "ListItem", "position": 2, "name": "Enlever la repisse", "item": "https://aireo.studio/fr/enlever-la-repisse.html" }
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "Enlever la repisse (diaphonie) entre plusieurs micros",
+      "description": "Diaphonie, mic bleed : pourquoi un noise gate ne suffit pas sur des voix, et comment enlever la repisse automatiquement, en local.",
+      "inLanguage": "fr-FR",
+      "author": { "@type": "Organization", "name": "Aireo" },
+      "publisher": { "@type": "Organization", "name": "Aireo", "logo": { "@type": "ImageObject", "url": "https://aireo.studio/assets/og-cover.png" } },
+      "mainEntityOfPage": "https://aireo.studio/fr/enlever-la-repisse.html"
+    },
+    {
+      "@type": "FAQPage",
+      "inLanguage": "fr-FR",
+      "mainEntity": [
+        { "@type": "Question", "name": "Repisse, diaphonie, mic bleed : c'est pareil ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui. « Repisse » est le terme courant en studio, « diaphonie » le terme technique, « mic bleed » (ou crosstalk) l'équivalent anglais. Tous désignent ce qu'un micro capte des sources qu'il n'est pas censé enregistrer." } },
+        { "@type": "Question", "name": "Peut-on enlever la repisse d'un fichier déjà mélangé ?", "acceptedAnswer": { "@type": "Answer", "text": "Très difficilement : une fois les voix collées dans un seul fichier, elles ne sont plus séparables proprement. Le bon réflexe est de repartir des micros séparés, un fichier par personne." } },
+        { "@type": "Question", "name": "Faut-il s'y connaître en mixage ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. Aireo fait l'analyse multi-micros et la suppression de repisse automatiquement : vous déposez vos fichiers, c'est traité tout seul. Aucun seuil à régler." } },
+        { "@type": "Question", "name": "Mes fichiers sont-ils envoyés sur un serveur ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. Tout le traitement se fait sur votre ordinateur : aucun upload, aucun compte, aucun cloud." } }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>
