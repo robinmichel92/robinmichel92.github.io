@@ -81,6 +81,31 @@
   }
 
   /* ============================================================
+     HALOS (aura) — on fige l'animation quand ça ne se voit pas
+     ------------------------------------------------------------
+     Les 8 halos flous (blur 70px) + le morphe de couleur repeignent
+     à CHAQUE frame : coûteux en continu. On met l'animation en pause
+     quand le hero n'est plus à l'écran (tout le reste du défilement
+     redevient fluide) et quand l'onglet passe en arrière-plan (batterie).
+     Aucun changement visuel sur le 1er écran, là où le morphe compte.
+     `prefers-reduced-motion` est déjà géré en CSS (animation:none).
+     ============================================================ */
+  var aura = document.querySelector(".aura");
+  if (aura && !reduceMotion) {
+    var heroEl = document.getElementById("hero");
+    var auraSeen = true, tabShown = true;
+    function syncAura() { aura.classList.toggle("is-paused", !(auraSeen && tabShown)); }
+    if (heroEl && "IntersectionObserver" in window) {
+      new IntersectionObserver(function (entries) {
+        auraSeen = entries[0].isIntersecting; syncAura();
+      }, { threshold: 0 }).observe(heroEl);
+    }
+    document.addEventListener("visibilitychange", function () {
+      tabShown = !document.hidden; syncAura();
+    });
+  }
+
+  /* ============================================================
      MODULE AVANT / APRÈS — forme d'onde réelle + écoute pilotée par la barre
      ------------------------------------------------------------
      La barre verticale = POINT DE BASCULE : à gauche on entend le brut
@@ -253,13 +278,23 @@
       });
     });
 
+    // Présence d'un exemple SANS le télécharger (HEAD léger) : sert à marquer les
+    // onglets « à venir » sans tirer ~3 Mo d'audio au chargement. Un 404 => « à venir » ;
+    // tout autre cas => on laisse le clic décider (au cas où un hôte bloque HEAD).
+    function probe(ex) {
+      return fetch(ex.avant, { method: "HEAD" })
+        .then(function (r) { if (r.status === 404) ex.ok = false; })
+        .catch(function () {})
+        .then(function () { markTab(ex); return ex; });
+    }
+
     function init() {
       if (!window.fetch || !AC) { fallbackPeaks(); render(); return; }
       try { actx = new AC(); } catch (e) { fallbackPeaks(); render(); return; }
-      // décode chaque exemple (les manquants échouent vite), puis active le 1er dispo
-      Promise.all(EXAMPLES.map(decodeExample)).then(function () {
-        EXAMPLES.forEach(markTab);
-        var first = EXAMPLES.filter(function (e) { return e.ok; })[0];
+      // On SONDE la présence (HEAD, sans télécharger) puis on ne DÉCODE que le 1er
+      // exemple disponible. Les autres restent paresseux : décodés au clic (activate()).
+      Promise.all(EXAMPLES.map(probe)).then(function () {
+        var first = EXAMPLES.filter(function (e) { return e.ok !== false; })[0];
         if (first) activate(first);
         else { fallbackPeaks(); setSoon(true); render(); }
       });

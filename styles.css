@@ -85,6 +85,9 @@ h1,h2,h3{margin:0;font-weight:700;letter-spacing:-.02em;line-height:1.04}
 @keyframes hueA{0%,100%{--c:#34d3a6}33%{--c:#7c6cf0}66%{--c:#1c2433}}
 @keyframes hueB{0%,100%{--c:#7c6cf0}33%{--c:#34d3a6}66%{--c:#23301f}}
 @media (prefers-reduced-motion:reduce){.ax{animation:none!important;opacity:.38}}
+/* halos figés hors du 1er écran / onglet en arrière-plan (piloté par script.js) :
+   coupe le repaint permanent du flou + morphe de couleur là où ça ne se voit pas */
+.aura.is-paused .ax{animation-play-state:paused}
 
 /* ============ WORDMARK ============ */
 .word{display:inline-flex;align-items:baseline;font-weight:700;letter-spacing:.004em;line-height:1}

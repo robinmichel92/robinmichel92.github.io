@@ -1,0 +1,25 @@
+# Aireo
+
+> Aireo is a voice-cleanup and multi-mic autolevel app for podcasts. Drop your voices (one solo mic, or several mics recorded at the same time) and Aireo cleans each voice and balances your mics' levels against each other, ready to mix. Everything runs locally on your Mac or PC. Perpetual license from EUR 79, with a free 7-day trial (you only pay to export).
+
+Aireo is built for podcast and broadcast editors. It removes mic bleed (crosstalk, the sound each mic picks up from the other voices), de-reverbs, de-noises, cleans mouth noises and breaths, tames room echo, applies corrective EQ, de-plosives and de-essing, and sets platform loudness (Apple Podcasts, Spotify, Deezer, YouTube). It imports and exports WAV and AAF (the AAF session comes back sorted for the mix: voices isolated track by track, music staggered, FX sorted, every sound at its original timecode) and can do generative voice restoration. Nothing is uploaded; all processing happens on your machine. The site is bilingual: English at the root, French under /fr/.
+
+## Main pages
+
+- [Aireo (home, English)](https://aireo.studio/): What Aireo does, how it works, before/after audio examples, the app, pricing and FAQ.
+- [Aireo (accueil, français)](https://aireo.studio/fr/): The same homepage in French.
+- [Pricing](https://aireo.studio/#tarifs): Aireo Light (EUR 79) and Aireo Pro (EUR 189), perpetual licenses. Free 7-day trial, no card required, pay only to export.
+
+## Guides
+
+- [Remove mic bleed](https://aireo.studio/remove-mic-bleed.html): What mic bleed (crosstalk) is, why a noise gate is not enough on voices, and how Aireo removes it automatically and locally.
+- [Auphonic alternative](https://aireo.studio/auphonic-alternative.html): How Aireo compares to Auphonic: local processing and a one-time purchase instead of a cloud subscription, plus mic balancing and bleed removal.
+- [Clean voices locally](https://aireo.studio/clean-voices-locally.html): How to clean podcast voices on your own machine (de-reverb, de-noise, levels) with no upload and a one-time purchase.
+- [Enlever la repisse (français)](https://aireo.studio/fr/enlever-la-repisse.html): Ce qu'est la repisse (diaphonie) et comment Aireo la retire automatiquement, en local.
+- [Alternative à Auphonic (français)](https://aireo.studio/fr/alternative-auphonic.html): Aireo face à Auphonic: traitement local et achat unique plutôt qu'un abonnement cloud.
+- [Nettoyer ses voix en local (français)](https://aireo.studio/fr/nettoyer-voix-en-local.html): Nettoyer ses voix de podcast en local (dé-réverb, débruitage, niveaux), sans upload.
+
+## Optional
+
+- [Privacy](https://aireo.studio/confidentialite.html): Privacy policy. Aireo runs locally and does not upload your audio.
+- [Legal notice](https://aireo.studio/mentions-legales.html): Legal notice (mentions légales).

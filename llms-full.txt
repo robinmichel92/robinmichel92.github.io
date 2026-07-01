@@ -1,0 +1,89 @@
+# Aireo
+
+> Voice cleanup and multi-mic autolevel for podcasts. Drop your voices, Aireo takes care of it. 100% local, for Mac and Windows. Perpetual license from EUR 79, with a free 7-day trial.
+
+## What Aireo is
+
+Aireo is a desktop app that cleans voices and balances multi-microphone recordings for podcast and broadcast. You drop in your voices (a single solo mic, or several mics recorded at the same time), and Aireo returns a clean, level-balanced base that is ready to mix. It is built so that sound does not have to be your job: instead of EQ-ing track by track, chasing every level and second-guessing the result, you let Aireo handle it.
+
+Everything runs on your own machine. No audio is uploaded to any server. You only pay when you export.
+
+## Who it is for
+
+Video and image editors who also have to deliver clean audio, and solo podcasters or interviewers who record one or several microphones. Anyone who wants a professional-sounding voice without running a full studio mix.
+
+## What Aireo cleans
+
+- Mic bleed and crosstalk removal (what each mic picks up from the other voices)
+- De-reverb and room echo
+- De-noise
+- Mouth noises and breaths
+- Corrective EQ
+- De-plosives and de-essing
+- Generative voice restoration (rebuild missing frequencies on a voice captured on a phone or a low-end mic)
+
+## Multi-mic automix (the core feature)
+
+When several people are recorded on separate mics at the same time, Aireo auto-levels and balances the microphones against each other, from separate files: whoever is speaking is heard clearly. It removes the bleed each mic captures from the other voices, so the result sounds like one coherent conversation instead of several mismatched tracks.
+
+## Levels and platforms
+
+Aireo sets loudness for the main platforms (Apple Podcasts, Spotify, Deezer, YouTube), plus broadcast and radio targets, with a built-in A/B before/after so you can hear each change before exporting. Audio is processed at 48 kHz / 24-bit.
+
+## Import and export
+
+- WAV import and export
+- AAF import and export: the session comes back sorted for the mix, with voices isolated track by track, music staggered, FX sorted, and every sound kept at its original timecode
+- Polyphonic WAV import (multichannel files from field recorders)
+
+## Local and private
+
+All processing is local. Your rushes and your clients' voices never leave your computer; privacy is built into the architecture. There is no cloud upload, and no account is needed to process your audio.
+
+## Platforms and requirements
+
+Aireo runs on macOS (Apple Silicon, M1 to M4, and Intel Macs) and on Windows 10 and 11 (64-bit, coming soon). On Apple Silicon it uses the GPU to accelerate part of the processing, so it is noticeably faster than on an Intel Mac. macOS 12 (Monterey) or newer is recommended, macOS 11 (Big Sur) is the minimum.
+
+## Pricing
+
+- Free 7-day trial, no card required. You can try everything and only pay to export.
+- Aireo Light: EUR 79, perpetual license.
+- Aireo Pro: EUR 189, perpetual license.
+- One-time purchase, not a subscription.
+
+Aireo Light is the voice-cleanup version; Aireo Pro adds AAF import and export, multi-microphone processing, and generative restoration. See the pricing and FAQ sections on the site for the current, exact feature split.
+
+## Common questions answered on the site
+
+- What Aireo is, and what problem it solves
+- Whether Aireo balances several mics automatically
+- Whether Aireo removes mic bleed (one mic picking up the other voices)
+- How to get all voices to the same level
+- Whether Aireo needs separate tracks (multitrack) or one mixed file
+- Whether it works with remote recordings (Riverside, Zencastr, and similar)
+- How Aireo differs from online, cloud-based cleanup tools
+- Who makes Aireo
+- Whether files are sent to a server (they are not)
+- Which formats Aireo accepts
+- What Aireo does with your AAF
+- The difference between Light and Pro
+- Whether there is a free version or trial
+- Whether it is a subscription (it is not)
+- Which systems Aireo runs on, and what computer you need
+- How long processing takes
+
+## Pages
+
+- Home (English): https://aireo.studio/
+- Accueil (français): https://aireo.studio/fr/
+- Pricing: https://aireo.studio/#tarifs
+- Remove mic bleed: https://aireo.studio/remove-mic-bleed.html
+- Auphonic alternative: https://aireo.studio/auphonic-alternative.html
+- Clean voices locally: https://aireo.studio/clean-voices-locally.html
+- Enlever la repisse: https://aireo.studio/fr/enlever-la-repisse.html
+- Alternative à Auphonic: https://aireo.studio/fr/alternative-auphonic.html
+- Nettoyer ses voix en local: https://aireo.studio/fr/nettoyer-voix-en-local.html
+
+## About
+
+Aireo is made by Robin Michel, a sound engineer and mixer. Website: https://aireo.studio

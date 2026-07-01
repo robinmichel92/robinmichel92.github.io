@@ -83,7 +83,7 @@
 
   <h1>Remove mic bleed (crosstalk) between several mics</h1>
 
-  <p class="lede">Mic bleed — also called <strong>crosstalk</strong>, or « repisse » in French studios — is what one person's mic picks up from the <em>other</em> voices when several mics are recording at once. On voices, a simple noise gate handles it badly&nbsp;: you have to analyse the mics <em>together</em>. Here's why, and how to remove it automatically.</p>
+  <p class="lede">Mic bleed (also called <strong>crosstalk</strong>, or « repisse » in French studios) is what one person's mic picks up from the <em>other</em> voices when several mics are recording at once. On voices, a simple noise gate handles it badly&nbsp;: you have to analyse the mics <em>together</em>. Here's why, and how to remove it automatically.</p>
 
   <h2>What is mic bleed?</h2>
   <p>As soon as two people talk in the same room, each with their own mic, every mic captures its own voice… but also, fainter and slightly delayed, everyone else's. That's mic bleed. You hear it as a "doubled" voice, a roomy feel, and a constant background&nbsp;: even when one person speaks, you hear the others' open mics.</p>
@@ -96,7 +96,7 @@
     <li>When two people talk at once, the threshold no longer knows what to cut&nbsp;: the bleed gets through anyway.</li>
     <li>It can't tell the mic's <strong>real voice</strong> from the others' bleed&nbsp;: both sit above the threshold.</li>
   </ul>
-  <p>To do it cleanly, you have to compare the mics against each other, moment by moment, and work out who is really talking — not just watch a level on a single mic.</p>
+  <p>To do it cleanly, you have to compare the mics against each other, moment by moment, and work out who is really talking, not just watch a level on a single mic.</p>
 
   <h2>How to remove mic bleed automatically</h2>
   <p>The reliable approach is to <strong>analyse all the mics together</strong>&nbsp;: at each moment, identify the mic carrying the most direct voice, and attenuate that same voice on the others. This preserves the real speech and removes the spill, without chopping the sound.</p>
@@ -110,11 +110,11 @@
 
   <h2>In practice, in three steps</h2>
   <ol class="doc-steps">
-    <li>Drop your <strong>separate mic files</strong> (one per person) into Aireo — or an AAF edit from Premiere or DaVinci.</li>
+    <li>Drop your <strong>separate mic files</strong> (one per person) into Aireo, or an AAF edit from Premiere or DaVinci.</li>
     <li>Run it. Aireo lines up the mics, removes the bleed and cleans each voice automatically.</li>
     <li>Get a <strong>mix-ready</strong> base, or files ready to publish. The original is never touched.</li>
   </ol>
-  <p>Tip&nbsp;: remote tools that record <strong>one track per guest</strong> (Riverside, Zencastr, SquadCast) are ideal — exactly what Aireo needs to remove the bleed well.</p>
+  <p>Tip&nbsp;: remote tools that record <strong>one track per guest</strong> (Riverside, Zencastr, SquadCast) are ideal, exactly what Aireo needs to remove the bleed well.</p>
 
   <div class="doc-cta">
     <p><strong>Try it on your own tracks, free.</strong><br>Hear the full before/after; you only pay to export.</p>
@@ -124,7 +124,7 @@
   <h2>Frequently asked questions</h2>
   <div class="doc-faq">
     <details open>
-      <summary>Mic bleed, crosstalk, spill — same thing?</summary>
+      <summary>Mic bleed, crosstalk, spill: same thing?</summary>
       <p>Yes. All of them describe what a mic captures from sources it isn't meant to record. "Bleed" and "spill" are the common studio terms; "crosstalk" the technical one.</p>
     </details>
     <details>
@@ -181,7 +181,7 @@
       "@type": "FAQPage",
       "inLanguage": "en",
       "mainEntity": [
-        { "@type": "Question", "name": "Mic bleed, crosstalk, spill — same thing?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. All of them describe what a mic captures from sources it isn't meant to record. Bleed and spill are the common studio terms; crosstalk the technical one." } },
+        { "@type": "Question", "name": "Mic bleed, crosstalk, spill: same thing?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. All of them describe what a mic captures from sources it isn't meant to record. Bleed and spill are the common studio terms; crosstalk the technical one." } },
         { "@type": "Question", "name": "Can you remove bleed from an already-mixed file?", "acceptedAnswer": { "@type": "Answer", "text": "Barely: once the voices are glued into one file, they can't be cleanly separated. The right move is to start from the separate mics, one file per person." } },
         { "@type": "Question", "name": "Do I need to know how to mix?", "acceptedAnswer": { "@type": "Answer", "text": "No. Aireo does the multi-mic analysis and bleed removal automatically: you drop your files, it's handled. No threshold to set." } },
         { "@type": "Question", "name": "Are my files sent to a server?", "acceptedAnswer": { "@type": "Answer", "text": "No. All processing happens on your computer: no upload, no account, no cloud." } }
