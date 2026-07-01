@@ -1,9 +1,12 @@
-# robots.txt — Aireo · aireo.studio
+# robots.txt · Aireo · aireo.studio
 
+# Préférences d'usage du contenu par l'IA (Content Signals, contentsignals.org) :
+# recherche OUI, réponses/citations IA OUI, entraînement OUI (copie marketing publique).
 User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 Allow: /
 
-# Crawlers IA (GEO) — explicitement autorisés à indexer le contenu
+# Crawlers IA (GEO) : explicitement autorisés à indexer le contenu
 User-agent: GPTBot
 Allow: /
 

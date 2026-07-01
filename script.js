@@ -534,7 +534,20 @@
 
     fallbackPeaks();  // visuel immédiat avant décodage
     ensureSized(60);
-    init();
+    // Décodage audio DIFFÉRÉ : on ne télécharge/décode l'exemple actif que lorsque le
+    // module A/B approche du viewport (gros gain mobile : ~1,3 Mo hors du chargement
+    // initial ; fallbackPeaks() a déjà dessiné un aperçu). Repli : pas d'IO -> direct.
+    var demoEl = document.getElementById("demo") || frame;
+    if (demoEl && "IntersectionObserver" in window) {
+      var demoIO = new IntersectionObserver(function (entries) {
+        if (!entries[0].isIntersecting) return;
+        demoIO.disconnect();
+        init();
+      }, { rootMargin: "0px" });   // seulement quand le module entre vraiment dans le viewport
+      demoIO.observe(demoEl);
+    } else {
+      init();
+    }
   })();
 
   /* ============================================================

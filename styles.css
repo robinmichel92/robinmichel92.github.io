@@ -88,6 +88,14 @@ h1,h2,h3{margin:0;font-weight:700;letter-spacing:-.02em;line-height:1.04}
 /* halos figés hors du 1er écran / onglet en arrière-plan (piloté par script.js) :
    coupe le repaint permanent du flou + morphe de couleur là où ça ne se voit pas */
 .aura.is-paused .ax{animation-play-state:paused}
+/* MOBILE : aura allégée (perf) — 4 halos STATIQUES, flou réduit. Sur mobile, le
+   morphe de couleur (@property, repaint par frame) + 8 gros flous coûtent trop cher.
+   On garde un dégradé vert/violet fixe, joli et quasi gratuit pour le GPU. */
+@media (max-width:640px){
+  .ax5,.ax6,.ax7,.ax8{display:none}
+  .ax{filter:blur(48px);animation:none;opacity:.42}
+  .ax2,.ax3{--c:#7c6cf0}
+}
 
 /* ============ WORDMARK ============ */
 .word{display:inline-flex;align-items:baseline;font-weight:700;letter-spacing:.004em;line-height:1}
