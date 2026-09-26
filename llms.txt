@@ -1,0 +1,40 @@
+# Aireo
+
+> Studio de post-production sonore établi entre Lyon et Paris.
+> Montage son, mixage et sound design pour les podcasts, YouTube et les médias
+> en ligne, et pour la télévision, le documentaire et le cinéma.
+> 149 programmes au catalogue, dont 23 formats digitaux.
+
+Références digitales : Legend, Micode, Brut, Charles Villa, Prime Video,
+L'Équipe Explore. Diffuseurs d'antenne : ARTE, France Télévisions, M6, TF1,
+Canal+, RMC Découverte, RMC Story, BFM Business.
+
+Niveaux de livraison : −16 LUFS pour les plateformes (podcast, YouTube),
+−23 LUFS en EBU R 128 pour l'antenne, crête vraie à −3 dBTP dans les deux cas.
+Surround 5.1 (ITU-R BS.775) et Dolby Atmos disponibles.
+
+## Prestations
+- [Mixage de podcast](https://aireo.studio/prestations/mixage-podcast/) : Mixage de podcast : nettoyage des voix, équilibrage entre intervenants, habillage et livraison au niveau des plateformes. À l'épisode ou au mois.
+- [Son pour YouTube](https://aireo.studio/prestations/mixage-youtube/) : Son pour YouTube : récupération des voix tournées en conditions réelles, mixage, sound design et livraison calibrée pour l'écoute mobile.
+- [Habillage et identité sonore](https://aireo.studio/prestations/habillage-sonore/) : Création d'habillage sonore : générique, virgules, transitions et identité sonore d'une chaîne, d'un podcast ou d'une marque.
+- [Accompagnement au mois](https://aireo.studio/prestations/accompagnement-mensuel/) : Un volume défini d'épisodes ou de vidéos par mois, un interlocuteur, des délais tenus. Le format de ceux qui publient chaque semaine.
+- [Mixage à l'image](https://aireo.studio/prestations/mixage-a-l-image/) : Mixage à l'image : équilibrage des voix, spatialisation, dynamique et conformité antenne EBU R 128. Stéréo, 5.1 et Dolby Atmos.
+- [Montage son](https://aireo.studio/prestations/montage-son/) : Montage son : tri des prises, nettoyage des directs, traitement de la repisse, raccords d'ambiance et préparation des sessions de mixage.
+- [Surround 5.1 et Dolby Atmos](https://aireo.studio/prestations/mixage-surround-dolby-atmos/) : Mixage multicanal 5.1 et Dolby Atmos : spatialisation, canal LFE, vérification du repli stéréo et livrables conformes au diffuseur.
+
+## Catalogue
+- [Tous les programmes](https://aireo.studio/travaux/) : le catalogue complet, 149 entrées
+- [Formats digitaux](https://aireo.studio/travaux/digital/) : 23 podcasts, chaînes YouTube et médias en ligne
+- [Émissions et plateau](https://aireo.studio/travaux/emissions-de-plateau/) : 41 programmes
+- [Documentaire](https://aireo.studio/travaux/documentaire/) : 26 programmes
+- [Sport](https://aireo.studio/travaux/sport/) : 8 programmes
+- [Fiction et cinéma](https://aireo.studio/travaux/fiction-et-cinema/) : 10 programmes
+- [TV réalité](https://aireo.studio/travaux/tv-realite/) : 23 programmes
+- [Cuisine](https://aireo.studio/travaux/cuisine/) : 9 programmes
+- [Podcast](https://aireo.studio/travaux/podcast/) : 7 programmes
+- [Publicité et films de marque](https://aireo.studio/travaux/publicite-et-films-de-marque/) : 17 programmes
+
+## Le studio
+- [Méthode et livraison](https://aireo.studio/methode/) : formats d'échange, niveaux, PAD, travail à distance
+- [Le studio](https://aireo.studio/studio/) : Robin Michel, ingénieur du son
+- [Contact](https://aireo.studio/contact/) : robinson.studio.rm@gmail.com
