@@ -1,86 +1,157 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Aireo: site under maintenance</title>
-<meta name="description" content="The Aireo website is temporarily under maintenance. We will be back shortly.">
-<meta name="theme-color" content="#0e1216">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="stylesheet" href="/assets/fonts.css">
-<meta property="og:title" content="Aireo: site under maintenance">
-<meta property="og:description" content="The Aireo website is temporarily under maintenance. We will be back shortly.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://aireo.studio/">
-<style>
-  :root{
-    --bg:#0e1216; --ink:#e6eaec; --ink-soft:#aab4bd; --ink-mute:#6c7884;
-    --line:rgba(255,255,255,.09);
-    --violet:#7c6cf0; --green:#34d3a6;
-    --mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
-    --sans:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  }
-  *{box-sizing:border-box}
-  html,body{height:100%}
-  body{
-    margin:0; background:var(--bg); color:var(--ink);
-    font-family:var(--sans); -webkit-font-smoothing:antialiased;
-    display:grid; place-items:center; padding:clamp(20px,6vw,72px);
-    position:relative; overflow-x:hidden;
-  }
-  .aura{position:fixed; inset:0; pointer-events:none; z-index:0}
-  .aura span{
-    position:absolute; border-radius:50%; filter:blur(70px);
-    mix-blend-mode:screen; opacity:.55;
-  }
-  .a1{width:52vw; height:52vw; left:-10vw; top:-14vw;
-      background:radial-gradient(circle,rgba(52,211,166,.30),transparent 68%);
-      animation:driftA 34s ease-in-out infinite}
-  .a2{width:46vw; height:46vw; right:-12vw; bottom:-10vw;
-      background:radial-gradient(circle,rgba(124,108,240,.30),transparent 68%);
-      animation:driftB 41s ease-in-out infinite}
-  @keyframes driftA{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(4vw,3vh,0) scale(1.12)}}
-  @keyframes driftB{0%,100%{transform:translate3d(0,0,0) scale(1.08)}50%{transform:translate3d(-4vw,-3vh,0) scale(1)}}
-  @media (prefers-reduced-motion:reduce){.a1,.a2{animation:none}}
+<meta name="robots" content="noindex, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page introuvable · Aireo</title>
+<meta name="description" content="Contacter le studio pour un devis de mixage à l&#x27;image, de montage son ou de sound design. Réponse avec créneau et tarif. Lyon et Paris.">
+<meta name="author" content="Robin Michel">
+<meta name="theme-color" content="#ffffff">
 
-  main{position:relative; z-index:1; max-width:560px; width:100%; text-align:left}
-  .mark{
-    font-family:var(--sans); font-weight:700; font-size:clamp(28px,5vw,38px);
-    letter-spacing:-.02em; margin:0 0 clamp(28px,6vw,44px);
-    background:linear-gradient(95deg,var(--green) 8%,var(--violet) 88%);
-    -webkit-background-clip:text; background-clip:text; color:transparent;
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Aireo · Studio de post-production sonore">
+<meta property="og:title" content="Contact · Devis mixage et montage son · Aireo">
+<meta property="og:description" content="Contacter le studio pour un devis de mixage à l&#x27;image, de montage son ou de sound design. Réponse avec créneau et tarif. Lyon et Paris.">
+<meta property="og:url" content="https://aireo.studio/contact/">
+
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/css/site.css">
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "ContactPage",
+ "url": "https://aireo.studio/contact/",
+ "mainEntity": {
+  "@id": "https://aireo.studio/#studio"
+ }
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Accueil",
+   "item": "https://aireo.studio/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Contact",
+   "item": "https://aireo.studio/contact/"
   }
-  .eyebrow{
-    font-family:var(--mono); font-size:12px; letter-spacing:.14em;
-    text-transform:uppercase; color:var(--green); margin:0 0 14px;
-    display:flex; align-items:center; gap:9px;
-  }
-  .dot{width:7px; height:7px; border-radius:50%; background:var(--green);
-       box-shadow:0 0 0 0 rgba(52,211,166,.45); animation:pulse 2.4s ease-out infinite}
-  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(52,211,166,.45)}70%{box-shadow:0 0 0 10px rgba(52,211,166,0)}100%{box-shadow:0 0 0 0 rgba(52,211,166,0)}}
-  h1{font-size:clamp(28px,6vw,44px); line-height:1.1; letter-spacing:-.025em;
-     font-weight:600; margin:0 0 18px}
-  p{font-size:clamp(15px,2.4vw,17px); line-height:1.65; color:var(--ink-soft); margin:0 0 14px}
-  .alt{color:var(--ink-mute); font-size:14px; line-height:1.6}
-  .sep{height:1px; background:var(--line); margin:clamp(28px,5vw,38px) 0 20px; border:0}
-  a{color:var(--ink); text-decoration:none; border-bottom:1px solid rgba(52,211,166,.5);
-    padding-bottom:1px; transition:color .2s, border-color .2s}
-  a:hover{color:var(--green); border-color:var(--green)}
-  .foot{font-family:var(--mono); font-size:12px; color:var(--ink-mute); letter-spacing:.02em}
-</style>
+ ]
+}
+</script>
 </head>
 <body>
-<div class="aura" aria-hidden="true"><span class="a1"></span><span class="a2"></span></div>
-<main>
-  <p class="mark">Aireo.</p>
-  <p class="eyebrow"><span class="dot"></span>Maintenance</p>
-  <h1>The site is under maintenance.</h1>
-  <p>Aireo will be back shortly. Downloads and purchases are paused while we update. Thanks for your patience.</p>
-  <p class="alt">Le site d'Aireo est momentanément en maintenance. Les téléchargements et les achats sont suspendus le temps de la mise à jour. Nous revenons très vite.</p>
-  <hr class="sep">
-  <p class="foot">Questions: <a href="mailto:contact@aireo.studio">contact@aireo.studio</a></p>
+<a class="skip" href="#main">Aller au contenu</a>
+
+<header class="hdr">
+  <div class="wrap hdr__in">
+    <a class="brand" href="/">
+      <span class="brand__n">Aireo</span>
+      <span class="brand__t">Son · Mix · Digital</span>
+    </a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu">≡</button>
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+        <a href="/travaux/">Travaux</a>
+        <a href="/prestations/">Prestations</a>
+        <a href="/methode/">Méthode</a>
+        <a href="/studio/">Le studio</a>
+        <a class="nav__cta" href="/contact/">Un projet ?</a>
+    </nav>
+  </div>
+</header>
+<nav class="crumb wrap" aria-label="Fil d'Ariane"><a href="/">Accueil</a><span>/</span>Contact</nav>
+<main id="main">
+<section class="section" style="padding-top:var(--s5)">
+  <div class="wrap prose">
+    <p class="kicker">Erreur 404</p>
+    <h1>Cette page n'existe pas</h1>
+    <p class="lede">Le lien est peut-être ancien, ou l'adresse comporte une faute.</p>
+    <p style="margin-top:var(--s4)">
+      <a class="btn btn--1" href="/">Retour à l'accueil</a>
+      <a class="btn btn--2" href="/travaux/" style="margin-left:8px">Voir les réalisations</a>
+    </p>
+  </div>
+</section>
 </main>
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr__grid">
+      <div>
+        <h4>Aireo</h4>
+        <p style="color:var(--ink-soft);font-size:.93rem">Studio de post-production sonore.<br>
+        Robin Michel, ingénieur du son, mixage à l&#x27;image.<br>Lyon · Paris.</p>
+      </div>
+        <div><h4>Le studio</h4><ul><li><a href="/studio/">À propos</a></li><li><a href="/methode/">Méthode et livraison</a></li><li><a href="/contact/">Contact</a></li></ul></div>
+        <div><h4>Digital</h4><ul><li><a href="/prestations/mixage-podcast/">Mixage de podcast</a></li><li><a href="/prestations/mixage-youtube/">Son pour YouTube</a></li><li><a href="/prestations/habillage-sonore/">Habillage et identité sonore</a></li><li><a href="/travaux/digital/">Les formats digitaux</a></li></ul></div>
+        <div><h4>Antenne</h4><ul><li><a href="/prestations/mixage-a-l-image/">Mixage à l&#x27;image</a></li><li><a href="/prestations/montage-son/">Montage son</a></li><li><a href="/prestations/mixage-surround-dolby-atmos/">Surround 5.1 et Atmos</a></li><li><a href="/travaux/">Tout le catalogue</a></li></ul></div>
+    </div>
+    <div class="ftr__bot">
+      <span>© <span id="yr">2026</span> Aireo · Robin Michel</span>
+      <span><a href="/mentions-legales/">Mentions légales</a> · <a href="/confidentialite/">Confidentialité</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// menu mobile
+(function () {
+  var b = document.querySelector('.burger'), n = document.getElementById('nav');
+  function ferme() { n.hidden = true; b.setAttribute('aria-expanded', 'false'); }
+  function applique() { if (matchMedia('(max-width:860px)').matches) ferme(); else n.hidden = false; }
+  applique();
+  addEventListener('resize', applique);
+  b.addEventListener('click', function () {
+    var ouvert = b.getAttribute('aria-expanded') === 'true';
+    n.hidden = ouvert; b.setAttribute('aria-expanded', String(!ouvert));
+  });
+  n.addEventListener('click', function (ev) { if (ev.target.tagName === 'A') applique(); });
+})();
+
+// lecteur vidéo en différé : l'iframe n'est créée qu'au clic
+(function () {
+  // les deux présentations : vignette de carte et grand bloc de la page d'accueil
+  document.querySelectorAll('.card__video, .film__play').forEach(function (b) {
+    b.addEventListener('click', function () {
+      if (b.dataset.joue) return;
+      b.dataset.joue = '1';
+      var f = document.createElement('iframe');
+      // domaine sans cookie, et lecture lancée par le visiteur lui-même
+      f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.video +
+              '?autoplay=1&rel=0';
+      f.title = b.getAttribute('aria-label') || 'Vidéo';
+      f.allow = 'accelerometer; autoplay; encrypted-media; picture-in-picture';
+      f.allowFullscreen = true;
+      b.innerHTML = '';
+      b.appendChild(f);
+    });
+  });
+})();
+
+// filet sous l'en-tête une fois la page défilée
+(function () {
+  var h = document.querySelector('.hdr');
+  var maj = function () { h.dataset.stuck = String(scrollY > 8); };
+  maj(); addEventListener('scroll', maj, { passive: true });
+})();
+</script>
 </body>
 </html>

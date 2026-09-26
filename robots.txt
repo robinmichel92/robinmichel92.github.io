@@ -1,12 +1,13 @@
 # robots.txt · Aireo · aireo.studio
 
-# Préférences d'usage du contenu par l'IA (Content Signals, contentsignals.org) :
-# recherche OUI, réponses/citations IA OUI, entraînement OUI (copie marketing publique).
 User-agent: *
-Content-Signal: search=yes, ai-input=yes, ai-train=yes
 Allow: /
 
-# Crawlers IA (GEO) : explicitement autorisés à indexer le contenu
+# Préférences d'usage du contenu (contentsignals.org) :
+# recherche OUI, réponses et citations IA OUI, entraînement OUI.
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
+
+# Moteurs de réponse : explicitement autorisés
 User-agent: GPTBot
 Allow: /
 
@@ -16,10 +17,10 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-User-agent: Google-Extended
+User-agent: ClaudeBot
 Allow: /
 
-User-agent: ClaudeBot
+User-agent: Google-Extended
 Allow: /
 
 Sitemap: https://aireo.studio/sitemap.xml

@@ -1,86 +1,473 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Aireo: site under maintenance</title>
-<meta name="description" content="The Aireo website is temporarily under maintenance. We will be back shortly.">
-<meta name="theme-color" content="#0e1216">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="stylesheet" href="/assets/fonts.css">
-<meta property="og:title" content="Aireo: site under maintenance">
-<meta property="og:description" content="The Aireo website is temporarily under maintenance. We will be back shortly.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://aireo.studio/">
-<style>
-  :root{
-    --bg:#0e1216; --ink:#e6eaec; --ink-soft:#aab4bd; --ink-mute:#6c7884;
-    --line:rgba(255,255,255,.09);
-    --violet:#7c6cf0; --green:#34d3a6;
-    --mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
-    --sans:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  }
-  *{box-sizing:border-box}
-  html,body{height:100%}
-  body{
-    margin:0; background:var(--bg); color:var(--ink);
-    font-family:var(--sans); -webkit-font-smoothing:antialiased;
-    display:grid; place-items:center; padding:clamp(20px,6vw,72px);
-    position:relative; overflow-x:hidden;
-  }
-  .aura{position:fixed; inset:0; pointer-events:none; z-index:0}
-  .aura span{
-    position:absolute; border-radius:50%; filter:blur(70px);
-    mix-blend-mode:screen; opacity:.55;
-  }
-  .a1{width:52vw; height:52vw; left:-10vw; top:-14vw;
-      background:radial-gradient(circle,rgba(52,211,166,.30),transparent 68%);
-      animation:driftA 34s ease-in-out infinite}
-  .a2{width:46vw; height:46vw; right:-12vw; bottom:-10vw;
-      background:radial-gradient(circle,rgba(124,108,240,.30),transparent 68%);
-      animation:driftB 41s ease-in-out infinite}
-  @keyframes driftA{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(4vw,3vh,0) scale(1.12)}}
-  @keyframes driftB{0%,100%{transform:translate3d(0,0,0) scale(1.08)}50%{transform:translate3d(-4vw,-3vh,0) scale(1)}}
-  @media (prefers-reduced-motion:reduce){.a1,.a2{animation:none}}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aireo · Mixage podcast et son pour YouTube · Lyon et Paris</title>
+<meta name="description" content="Mixage de podcast, son pour YouTube et habillage sonore. Legend, Brut X, France TV Slash et 126 programmes d&#x27;antenne. Lyon et Paris.">
+<link rel="canonical" href="https://aireo.studio/">
+<meta name="author" content="Robin Michel">
+<meta name="theme-color" content="#ffffff">
 
-  main{position:relative; z-index:1; max-width:560px; width:100%; text-align:left}
-  .mark{
-    font-family:var(--sans); font-weight:700; font-size:clamp(28px,5vw,38px);
-    letter-spacing:-.02em; margin:0 0 clamp(28px,6vw,44px);
-    background:linear-gradient(95deg,var(--green) 8%,var(--violet) 88%);
-    -webkit-background-clip:text; background-clip:text; color:transparent;
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Aireo · Studio de post-production sonore">
+<meta property="og:title" content="Aireo · Mixage podcast et son pour YouTube · Lyon et Paris">
+<meta property="og:description" content="Mixage de podcast, son pour YouTube et habillage sonore. Legend, Brut X, France TV Slash et 126 programmes d&#x27;antenne. Lyon et Paris.">
+<meta property="og:url" content="https://aireo.studio/">
+
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/css/site.css">
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "ProfessionalService",
+ "@id": "https://aireo.studio/#studio",
+ "name": "Aireo",
+ "description": "Studio de post-production sonore pour les médias digitaux : mixage de podcast, son pour YouTube, habillage sonore. Également mixage à l'image pour la télévision et le cinéma.",
+ "url": "https://aireo.studio/",
+ "email": "robinson.studio.rm@gmail.com",
+ "telephone": "+33631292296",
+ "founder": {
+  "@id": "https://aireo.studio/#robin"
+ },
+ "employee": {
+  "@id": "https://aireo.studio/#robin"
+ },
+ "priceRange": "€€",
+ "areaServed": [
+  {
+   "@type": "City",
+   "name": "Lyon"
+  },
+  {
+   "@type": "City",
+   "name": "Paris"
+  },
+  {
+   "@type": "Country",
+   "name": "France"
   }
-  .eyebrow{
-    font-family:var(--mono); font-size:12px; letter-spacing:.14em;
-    text-transform:uppercase; color:var(--green); margin:0 0 14px;
-    display:flex; align-items:center; gap:9px;
+ ],
+ "address": [
+  {
+   "@type": "PostalAddress",
+   "addressLocality": "Lyon",
+   "addressCountry": "FR"
+  },
+  {
+   "@type": "PostalAddress",
+   "addressLocality": "Paris",
+   "addressCountry": "FR"
   }
-  .dot{width:7px; height:7px; border-radius:50%; background:var(--green);
-       box-shadow:0 0 0 0 rgba(52,211,166,.45); animation:pulse 2.4s ease-out infinite}
-  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(52,211,166,.45)}70%{box-shadow:0 0 0 10px rgba(52,211,166,0)}100%{box-shadow:0 0 0 0 rgba(52,211,166,0)}}
-  h1{font-size:clamp(28px,6vw,44px); line-height:1.1; letter-spacing:-.025em;
-     font-weight:600; margin:0 0 18px}
-  p{font-size:clamp(15px,2.4vw,17px); line-height:1.65; color:var(--ink-soft); margin:0 0 14px}
-  .alt{color:var(--ink-mute); font-size:14px; line-height:1.6}
-  .sep{height:1px; background:var(--line); margin:clamp(28px,5vw,38px) 0 20px; border:0}
-  a{color:var(--ink); text-decoration:none; border-bottom:1px solid rgba(52,211,166,.5);
-    padding-bottom:1px; transition:color .2s, border-color .2s}
-  a:hover{color:var(--green); border-color:var(--green)}
-  .foot{font-family:var(--mono); font-size:12px; color:var(--ink-mute); letter-spacing:.02em}
-</style>
+ ],
+ "sameAs": [
+  "https://www.linkedin.com/in/robin-michel-345b7a206",
+  "https://www.imdb.com/name/nm17331903/",
+  "https://www.wikidata.org/wiki/Q140465896"
+ ],
+ "knowsLanguage": [
+  "fr",
+  "en"
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Person",
+ "@id": "https://aireo.studio/#robin",
+ "name": "Robin Michel",
+ "alternateName": "Robinson",
+ "jobTitle": "Ingénieur du son, mixage à l'image",
+ "url": "https://aireo.studio/studio/",
+ "email": "robinson.studio.rm@gmail.com",
+ "telephone": "+33631292296",
+ "sameAs": [
+  "https://www.linkedin.com/in/robin-michel-345b7a206",
+  "https://www.imdb.com/name/nm17331903/",
+  "https://www.wikidata.org/wiki/Q140465896"
+ ],
+ "worksFor": {
+  "@id": "https://aireo.studio/#studio"
+ },
+ "knowsAbout": [
+  "Mixage de podcast",
+  "Son pour YouTube",
+  "Montage son",
+  "Sound design",
+  "Habillage sonore",
+  "Mixage à l'image",
+  "Dolby Atmos",
+  "EBU R 128"
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "WebSite",
+ "@id": "https://aireo.studio/#site",
+ "url": "https://aireo.studio/",
+ "name": "Aireo, Studio de post-production sonore",
+ "inLanguage": "fr-FR",
+ "publisher": {
+  "@id": "https://aireo.studio/#studio"
+ }
+}
+</script>
 </head>
 <body>
-<div class="aura" aria-hidden="true"><span class="a1"></span><span class="a2"></span></div>
-<main>
-  <p class="mark">Aireo.</p>
-  <p class="eyebrow"><span class="dot"></span>Maintenance</p>
-  <h1>The site is under maintenance.</h1>
-  <p>Aireo will be back shortly. Downloads and purchases are paused while we update. Thanks for your patience.</p>
-  <p class="alt">Le site d'Aireo est momentanément en maintenance. Les téléchargements et les achats sont suspendus le temps de la mise à jour. Nous revenons très vite.</p>
-  <hr class="sep">
-  <p class="foot">Questions: <a href="mailto:contact@aireo.studio">contact@aireo.studio</a></p>
+<a class="skip" href="#main">Aller au contenu</a>
+
+<header class="hdr">
+  <div class="wrap hdr__in">
+    <a class="brand" href="/">
+      <span class="brand__n">Aireo</span>
+      <span class="brand__t">Son · Mix · Digital</span>
+    </a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu">≡</button>
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+        <a href="/travaux/">Travaux</a>
+        <a href="/prestations/">Prestations</a>
+        <a href="/methode/">Méthode</a>
+        <a href="/studio/">Le studio</a>
+        <a class="nav__cta" href="/contact/">Un projet ?</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap hero__in hero__in--seul">
+    <div class="hero__l">
+      <p class="kicker">Podcast · YouTube · Médias en ligne</p>
+      <h1>Le son des plus gros formats digitaux.</h1>
+      <p class="lede">Legend, Micode, Brut, Prime&nbsp;Video, L'Équipe&nbsp;Explore. Montage son, mixage et sound design pour les podcasts, YouTube et les médias en ligne. Et 126 programmes de télévision au compteur.</p>
+      <div class="hero__cta">
+        <a class="btn btn--1" href="/travaux/digital/">Voir les références</a>
+        <a class="btn btn--2" href="/contact/">Demander un devis</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" style="padding-block:0" aria-label="Chiffres clés">
+  <div class="wrap">
+    <div class="compteur">
+      <div><b data-cible="2.2" data-dec="1" data-suffixe=" Md" >2,2 Md</b>
+        <span class="u">Contacts cumulés</span>
+        <span class="d">Télévision et web
+          (<a href="/methode/#vues">le détail du calcul</a>)</span></div>
+      <div><b data-cible="231" data-suffixe=" M">231 M</b>
+        <span class="u">Vues sur YouTube</span>
+        <span class="d">Legend, Micode, Charles Villa, Brut</span></div>
+      <div><b data-cible="5670">5 670</b><span class="u">Épisodes livrés</span>
+        <span class="d">Podcast, plateau et séries récurrentes</span></div>
+      <div><b data-cible="11100">11 100</b>
+        <span class="u">Bandes-annonces</span>
+        <span class="d">BFM Business, RMC Découverte, Story, Sport</span></div>
+      <div><b data-cible="149">149</b><span class="u">Programmes et formats</span>
+        <span class="d">126 d’entre eux passés à l’antenne</span></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section section--alt" id="regarder">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="kicker">01 · Regarder</p>
+      <h2>Le son de vidéos que des millions de gens ont déjà vues.</h2>
+      <p>Rien n'est chargé depuis YouTube tant que vous ne lancez pas la lecture.</p>
+    </div>
+    <div class="films"><figure class="film">
+        <button class="film__play" type="button" data-video="oOsl-Cgu34g"
+                aria-label="Lire : Mission Rosetta : le plus ancien mystère de l&#x27;humanité">
+          <img src="/assets/work/mission-rosetta-la-quete-des-origines.jpg" width="480"
+               height="640" loading="lazy" decoding="async"
+               alt="Mission Rosetta : le plus ancien mystère de l&#x27;humanité — mixage son par Robin Michel">
+        </button>
+        <figcaption>
+          <span class="film__vues">3,4 M<span>vues</span></span>
+          <span class="film__t">Mission Rosetta : le plus ancien mystère de l&#x27;humanité</span>
+          <span class="film__m">Micode · Mission Rosetta : la quête des origines</span>
+          
+        </figcaption>
+      </figure><figure class="film">
+        <button class="film__play" type="button" data-video="RKsNrak7VLo"
+                aria-label="Lire : Éric et Ramzy, l&#x27;interview">
+          <img src="/assets/work/legend.jpg" width="640"
+               height="213" loading="lazy" decoding="async"
+               alt="Éric et Ramzy, l&#x27;interview — mixage son par Robin Michel">
+        </button>
+        <figcaption>
+          <span class="film__vues">2,7 M<span>vues</span></span>
+          <span class="film__t">Éric et Ramzy, l&#x27;interview</span>
+          <span class="film__m">Legend</span>
+          
+        </figcaption>
+      </figure><figure class="film">
+        <button class="film__play" type="button" data-video="idbU2VFREj0"
+                aria-label="Lire : J&#x27;ai enquêté sur la pêche industrielle en France">
+          <img src="/assets/work/j-ai-enquete-sur-la-peche-industrielle-en-france.jpg" width="900"
+               height="506" loading="lazy" decoding="async"
+               alt="J&#x27;ai enquêté sur la pêche industrielle en France — mixage son par Robin Michel">
+        </button>
+        <figcaption>
+          <span class="film__vues">2,2 M<span>vues</span></span>
+          <span class="film__t">J&#x27;ai enquêté sur la pêche industrielle en France</span>
+          <span class="film__m">Charles Villa</span>
+          
+        </figcaption>
+      </figure><figure class="film">
+        <button class="film__play" type="button" data-video="h1jq8dhjDcU"
+                aria-label="Lire : J&#x27;ai rencontré un des narcotrafiquants français les plus importants d&#x27;Amérique du Sud">
+          <img src="/assets/work/j-ai-rencontre-un-des-narcotrafiquants-francais-les-.jpg" width="900"
+               height="506" loading="lazy" decoding="async"
+               alt="J&#x27;ai rencontré un des narcotrafiquants français les plus importants d&#x27;Amérique du Sud — mixage son par Robin Michel">
+        </button>
+        <figcaption>
+          <span class="film__vues">2,1 M<span>vues</span></span>
+          <span class="film__t">J&#x27;ai rencontré un des narcotrafiquants français les plus importants d&#x27;Amérique du Sud</span>
+          <span class="film__m">Charles Villa</span>
+          
+        </figcaption>
+      </figure><figure class="film">
+        <button class="film__play" type="button" data-video="jjKw3PWj0Z8"
+                aria-label="Lire : Son chantier hors-norme : une future centrale nucléaire">
+          <img src="/assets/work/les-batisseurs.jpg" width="640"
+               height="355" loading="lazy" decoding="async"
+               alt="Son chantier hors-norme : une future centrale nucléaire — mixage son par Robin Michel">
+        </button>
+        <figcaption>
+          <span class="film__vues">432 k<span>vues</span></span>
+          <span class="film__t">Son chantier hors-norme : une future centrale nucléaire</span>
+          <span class="film__m">Brut · Les bâtisseurs</span>
+          
+        </figcaption>
+      </figure><figure class="film">
+        <button class="film__play" type="button" data-video="6tp_vQpELMs"
+                aria-label="Lire : Méta Sexe, la bande-annonce">
+          <img src="/assets/work/meta-sexe.jpg" width="473"
+               height="640" loading="lazy" decoding="async"
+               alt="Méta Sexe, la bande-annonce — mixage son par Robin Michel">
+        </button>
+        <figcaption>
+          
+          <span class="film__t">Méta Sexe, la bande-annonce</span>
+          <span class="film__m">France Télévisions · Méta Sexe</span>
+          
+        </figcaption>
+      </figure></div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var cibles = document.querySelectorAll('.compteur b[data-cible]');
+  if (!cibles.length) return;
+  // En mouvement réduit, on laisse la valeur finale déjà présente dans le HTML.
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var DUREE = 1400;
+  cibles.forEach(function (el) {
+    var fin = parseFloat(el.dataset.cible);
+    if (!isFinite(fin)) return;
+    var dec = parseInt(el.dataset.dec || '0', 10);
+    var suf = el.dataset.suffixe || '';
+    var pre = el.dataset.prefixe || '';
+    var ecrit = function (v) {
+      el.textContent = pre + v.toLocaleString('fr-FR', { minimumFractionDigits: dec,
+                                                         maximumFractionDigits: dec }) + suf;
+    };
+    el.dataset.anime = '1';
+    ecrit(0);
+    var t0 = null, fini = false;
+    function termine() {
+      if (fini) return;
+      fini = true;
+      ecrit(fin);
+      delete el.dataset.anime;
+    }
+    function pas(t) {
+      if (fini) return;
+      if (t0 === null) t0 = t;
+      var k = Math.min((t - t0) / DUREE, 1);
+      // sortie en douceur : rapide au début, freine à l'arrivée
+      ecrit(fin * (1 - Math.pow(1 - k, 4)));
+      if (k < 1) requestAnimationFrame(pas); else termine();
+    }
+    requestAnimationFrame(pas);
+    // Filet : requestAnimationFrame est bridé dans un onglet en arrière-plan.
+    // Sans ça, un visiteur qui ouvre le site dans un onglet caché retrouve un
+    // compteur figé en pleine course au lieu du bon chiffre.
+    setTimeout(termine, DUREE + 400);
+  });
+})();
+</script>
+
+
+<section class="section section--alt">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="kicker">L'approche</p>
+      <h2>Le casque, le métro, et une sortie par semaine.</h2>
+      <p>Un format digital s&#x27;écoute au casque, dans le métro, et il sort chaque semaine. La voix doit passer dans ces conditions-là.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="prestations">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="kicker">02 · Prestations</p>
+      <h2>Du rush brut au fichier publiable.</h2>
+    </div>
+    <div class="grid grid--fix2" style="border:0"><a class="presta" href="/prestations/mixage-podcast/">
+        <h3>Podcast</h3><p>Montage, nettoyage, équilibrage des voix entre elles, habillage. Une cohérence qui tient sur une saison entière, pas épisode par épisode.</p>
+        <span class="presta__mode">À l&#x27;épisode ou au forfait mensuel</span><br>
+        <span class="presta__go">En savoir plus →</span>
+      </a><a class="presta" href="/prestations/mixage-youtube/">
+        <h3>YouTube et formats longs</h3><p>Récupération des voix tournées en conditions réelles, mix, sound design. Le son qui fait qu&#x27;on reste au-delà des trois premières minutes.</p>
+        <span class="presta__mode">À la vidéo ou au forfait mensuel</span><br>
+        <span class="presta__go">En savoir plus →</span>
+      </a><a class="presta" href="/prestations/habillage-sonore/">
+        <h3>Habillage et identité sonore</h3><p>Générique, virgules, transitions, signature de chaîne. Conçus pour rester reconnaissables après cent épisodes.</p>
+        <span class="presta__mode">Au projet</span><br>
+        <span class="presta__go">En savoir plus →</span>
+      </a><a class="presta" href="/prestations/accompagnement-mensuel/">
+        <h3>Accompagnement au mois</h3><p>Un volume défini d&#x27;épisodes ou de vidéos par mois, un interlocuteur, des délais tenus. Le format de ceux qui publient chaque semaine.</p>
+        <span class="presta__mode">Forfait récurrent</span><br>
+        <span class="presta__go">En savoir plus →</span>
+      </a></div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="kicker">03 · Comment ça marche</p>
+      <h2>Quatre étapes, un interlocuteur.</h2>
+    </div>
+    <div class="stats"><div class="stat"><b>01</b><span>Vous envoyez</span>
+        <p style="margin:12px 0 0;font-size:.92rem;color:var(--faint)">Les rushes et le montage. Pas besoin de préparer quoi que ce soit.</p></div><div class="stat"><b>02</b><span>Le studio nettoie</span>
+        <p style="margin:12px 0 0;font-size:.92rem;color:var(--faint)">Bruit de fond, repisse, saturations, respirations. La voix redevient audible.</p></div><div class="stat"><b>03</b><span>Le studio mixe</span>
+        <p style="margin:12px 0 0;font-size:.92rem;color:var(--faint)">Équilibrage, dynamique, habillage. Calibré pour l&#x27;écoute au casque, dans le bruit.</p></div><div class="stat"><b>04</b><span>Vous publiez</span>
+        <p style="margin:12px 0 0;font-size:.92rem;color:var(--faint)">Fichier aux normes de la plateforme. Une passe de retours incluse.</p></div></div>
+  </div>
+</section>
+
+<section class="section" id="clients">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="kicker">04 · Pour qui</p>
+      <h2>Médias, productions et groupes.</h2>
+      <p>Les 23 formats digitaux sont regroupés par média. Derrière, 126 programmes
+         passés à la télévision, ARTE, Canal+, M6, TF1, France Télévisions, BBC.</p>
+    </div>
+    <div class="marques"><div class="marque"><img class="marque__tuile" src="/assets/marques/legend.jpg" width="600" height="600" loading="lazy" decoding="async" alt="Legend"><span class="marque__nom">Legend</span><ul class="marque__liste"><li><a href="https://www.youtube.com/@legendmedia" target="_blank" rel="noopener">Legend ↗</a><b>300 épisodes</b></li><li>Legend Story<b>78 épisodes</b></li></ul></div><div class="marque"><img class="marque__tuile" src="/assets/marques/micode.jpg" width="600" height="600" loading="lazy" decoding="async" alt="Micode"><span class="marque__nom">Micode</span><ul class="marque__liste"><li><a href="https://www.youtube.com/@Micode" target="_blank" rel="noopener">Mission Rosetta ↗</a><b>1 sortie en salles</b></li></ul></div><div class="marque"><img class="marque__tuile" src="/assets/marques/charles-villa.jpg" width="600" height="600" loading="lazy" decoding="async" alt="Charles Villa"><span class="marque__nom">Charles Villa</span><ul class="marque__liste"><li><a href="https://www.youtube.com/watch?v=idbU2VFREj0" target="_blank" rel="noopener">La pêche industrielle ↗</a><b>documentaire</b></li><li><a href="https://www.youtube.com/watch?v=h1jq8dhjDcU" target="_blank" rel="noopener">Le narcotrafiquant ↗</a><b>documentaire</b></li><li><a href="https://www.youtube.com/watch?v=6csZ_5jU6lk" target="_blank" rel="noopener">Les armes françaises ↗</a><b>documentaire</b></li></ul></div><div class="marque"><img class="marque__tuile" src="/assets/marques/brut.jpg" width="600" height="600" loading="lazy" decoding="async" alt="Brut"><span class="marque__nom">Brut</span><ul class="marque__liste"><li><a href="https://www.youtube.com/watch?v=jjKw3PWj0Z8" target="_blank" rel="noopener">Les bâtisseurs ↗</a><b>4 épisodes</b></li><li><a href="https://www.youtube.com/watch?v=AQcHSE4dL44" target="_blank" rel="noopener">Marave ↗</a><b>docu digital</b></li><li>Les interviews de Cannes<b>9 interviews</b></li></ul></div><div class="marque"><img class="marque__tuile" src="/assets/marques/france-tv-slash.jpg" width="600" height="600" loading="lazy" decoding="async" alt="France.tv Slash"><span class="marque__nom">France.tv Slash</span><ul class="marque__liste"><li><a href="https://www.youtube.com/watch?v=gUExs2_yHJQ" target="_blank" rel="noopener">Battle of Marseille ↗</a><b>docu digital</b></li><li><a href="https://www.youtube.com/watch?v=6tp_vQpELMs" target="_blank" rel="noopener">Méta Sexe ↗</a><b>docu digital</b></li></ul></div><div class="marque"><img class="marque__tuile" src="/assets/marques/lequipe-explore.jpg" width="600" height="600" loading="lazy" decoding="async" alt="L&#x27;Équipe Explore"><span class="marque__nom">L&#x27;Équipe Explore</span><ul class="marque__liste"><li><a href="https://www.youtube.com/watch?v=kWLDhqWkYqI" target="_blank" rel="noopener">Ultra fortes ↗</a><b>documentaire</b></li><li><a href="https://www.youtube.com/watch?v=7vwfZWOuVIA" target="_blank" rel="noopener">Paul Magnier ↗</a><b>documentaire</b></li><li><a href="https://www.youtube.com/watch?v=i3s2MwEa8Ns" target="_blank" rel="noopener">1959, l&#x27;Himalaya ↗</a><b>documentaire</b></li><li><a href="https://www.lequipe.fr/explore/video/l-equipe-explore-documentaire-david-poisson-il-etait-une-flamme/20225312" target="_blank" rel="noopener">David Poisson ↗</a><b>documentaire</b></li></ul></div><div class="marque"><img class="marque__tuile" src="/assets/marques/prime-video.jpg" width="600" height="600" loading="lazy" decoding="async" alt="Prime Video"><span class="marque__nom">Prime Video</span><ul class="marque__liste"><li><a href="https://www.youtube.com/watch?v=z1VyHATctuc" target="_blank" rel="noopener">Twist the Throttle ↗</a><b>3 saisons</b></li></ul></div><div class="marque"><img class="marque__tuile" src="/assets/marques/youtube.jpg" width="600" height="600" loading="lazy" decoding="async" alt="YouTube"><span class="marque__nom">YouTube</span><ul class="marque__liste"><li>Carré<b>format</b></li><li>The Chase<b>format</b></li></ul></div><div class="marque"><span class="marque__vide" aria-hidden="true">Podcasts</span><span class="marque__nom">Podcasts</span><ul class="marque__liste"><li>Transonore<b>172 épisodes</b></li><li>BAO TALK<b>podcast</b></li><li>Sous emprise<b>podcast</b></li><li>Sons &amp; Merveilles<b>podcast</b></li><li>L&#x27;Art de bien vieillir<b>podcast</b></li></ul></div></div>
+
+    <p class="kicker" style="margin:var(--s5) 0 var(--s3)">Sociétés de production et groupes</p>
+    <ul class="credits"><li>909 Productions<span>Production</span></li><li>Adventure Line Productions<span>Production</span></li><li>Ah! Production<span>Production</span></li><li>Black Alpaga<span>Production</span></li><li>Black Dynamite<span>Production</span></li><li>Boomerang Agency<span>Production</span></li><li>Carson Prod<span>Production</span></li><li>EGO Production<span>Production</span></li><li>Flab Prod<span>Production</span></li><li>Fremantle<span>Production</span></li><li>Genton Productions<span>Production</span></li><li>GTNCO<span>Production</span></li><li>H2O Productions<span>Production</span></li><li>Hervé Hubert<span>Production</span></li><li>KM Production<span>Production</span></li><li>May 21<span>Production</span></li><li>Médias France<span>Production</span></li><li>Reservoir Prod<span>Production</span></li><li>Seiya Production<span>Production</span></li><li>Short Prod<span>Production</span></li><li>Studio 89<span>Production</span></li><li>Tea and Coffee<span>Production</span></li><li>Tony Comité<span>Production</span></li><li>France Télévisions<span>Groupe audiovisuel</span></li><li>France TV Studio<span>Groupe audiovisuel</span></li><li>TF1 Production<span>Groupe audiovisuel</span></li><li>BFM Business<span>Chaîne</span></li><li>ITV Studios France<span>Studio</span></li><li>Warner Bros<span>Studio</span></li><li>Renault Group<span>Marque</span></li><li>Société Générale<span>Marque</span></li><li>Top 14<span>Sport</span></li></ul>
+
+    <p style="margin-top:var(--s5)">
+      <a class="btn btn--2" href="/travaux/digital/">Le détail des formats digitaux</a>
+      <a class="btn btn--2" href="/travaux/" style="margin-left:8px">Les 149 programmes</a></p>
+  </div>
+</section>
+
+<section class="section section--alt" id="contact">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="kicker">05 · Contact</p>
+      <h2>Un format à sortir&nbsp;?</h2>
+      <p>Le format, la durée, la cadence de publication et la date visée. Réponse
+         immédiate avec un créneau et un tarif.</p>
+    </div>
+    <div class="contact__grid">
+      <div><p class="contact__item">Email</p>
+        <a class="contact__val" href="mailto:robinson.studio.rm@gmail.com">robinson.studio.rm@gmail.com</a></div>
+      <div><p class="contact__item">Téléphone</p>
+        <a class="contact__val" href="tel:+33631292296">06 31 29 22 96</a></div>
+      <div><p class="contact__item">Où</p>
+        <span class="contact__val">Lyon · Paris</span></div>
+    </div>
+  </div>
+</section>
 </main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr__grid">
+      <div>
+        <h4>Aireo</h4>
+        <p style="color:var(--ink-soft);font-size:.93rem">Studio de post-production sonore.<br>
+        Robin Michel, ingénieur du son, mixage à l&#x27;image.<br>Lyon · Paris.</p>
+      </div>
+        <div><h4>Le studio</h4><ul><li><a href="/studio/">À propos</a></li><li><a href="/methode/">Méthode et livraison</a></li><li><a href="/contact/">Contact</a></li></ul></div>
+        <div><h4>Digital</h4><ul><li><a href="/prestations/mixage-podcast/">Mixage de podcast</a></li><li><a href="/prestations/mixage-youtube/">Son pour YouTube</a></li><li><a href="/prestations/habillage-sonore/">Habillage et identité sonore</a></li><li><a href="/travaux/digital/">Les formats digitaux</a></li></ul></div>
+        <div><h4>Antenne</h4><ul><li><a href="/prestations/mixage-a-l-image/">Mixage à l&#x27;image</a></li><li><a href="/prestations/montage-son/">Montage son</a></li><li><a href="/prestations/mixage-surround-dolby-atmos/">Surround 5.1 et Atmos</a></li><li><a href="/travaux/">Tout le catalogue</a></li></ul></div>
+    </div>
+    <div class="ftr__bot">
+      <span>© <span id="yr">2026</span> Aireo · Robin Michel</span>
+      <span><a href="/mentions-legales/">Mentions légales</a> · <a href="/confidentialite/">Confidentialité</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// menu mobile
+(function () {
+  var b = document.querySelector('.burger'), n = document.getElementById('nav');
+  function ferme() { n.hidden = true; b.setAttribute('aria-expanded', 'false'); }
+  function applique() { if (matchMedia('(max-width:860px)').matches) ferme(); else n.hidden = false; }
+  applique();
+  addEventListener('resize', applique);
+  b.addEventListener('click', function () {
+    var ouvert = b.getAttribute('aria-expanded') === 'true';
+    n.hidden = ouvert; b.setAttribute('aria-expanded', String(!ouvert));
+  });
+  n.addEventListener('click', function (ev) { if (ev.target.tagName === 'A') applique(); });
+})();
+
+// lecteur vidéo en différé : l'iframe n'est créée qu'au clic
+(function () {
+  // les deux présentations : vignette de carte et grand bloc de la page d'accueil
+  document.querySelectorAll('.card__video, .film__play').forEach(function (b) {
+    b.addEventListener('click', function () {
+      if (b.dataset.joue) return;
+      b.dataset.joue = '1';
+      var f = document.createElement('iframe');
+      // domaine sans cookie, et lecture lancée par le visiteur lui-même
+      f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.video +
+              '?autoplay=1&rel=0';
+      f.title = b.getAttribute('aria-label') || 'Vidéo';
+      f.allow = 'accelerometer; autoplay; encrypted-media; picture-in-picture';
+      f.allowFullscreen = true;
+      b.innerHTML = '';
+      b.appendChild(f);
+    });
+  });
+})();
+
+// filet sous l'en-tête une fois la page défilée
+(function () {
+  var h = document.querySelector('.hdr');
+  var maj = function () { h.dataset.stuck = String(scrollY > 8); };
+  maj(); addEventListener('scroll', maj, { passive: true });
+})();
+</script>
 </body>
 </html>
